@@ -1,5 +1,4 @@
 import React from 'react';
-import Header from './PagesHeader';
 import { Input } from 'antd';
 
 const { Search } = Input;
