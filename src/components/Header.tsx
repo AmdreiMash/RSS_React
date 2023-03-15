@@ -4,7 +4,7 @@ import type { MenuProps } from 'antd';
 import { HomeOutlined, InfoCircleOutlined } from '@ant-design/icons';
 import { Link } from 'react-router-dom';
 
-class NavBar extends React.Component {
+class Header extends React.Component {
   state = { current: location.pathname };
 
   navItems: MenuProps['items'] = [
@@ -23,10 +23,13 @@ class NavBar extends React.Component {
   componentDidMount() {
     this.setState({ current: location.pathname });
   }
-
   render() {
-    return <Menu mode="horizontal" selectedKeys={[this.state.current]} items={this.navItems} />;
+    return (
+      <header>
+        <Menu mode="horizontal" selectedKeys={[this.state.current]} items={this.navItems} />
+      </header>
+    );
   }
 }
 
-export default NavBar;
+export default Header;

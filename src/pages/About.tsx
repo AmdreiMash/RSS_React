@@ -1,12 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import NavBar from '../components/Header/NavBar';
+import Header from '../components/Header';
 
 class About extends React.Component {
   render() {
     return (
       <>
-        <NavBar />
+        <Header />
         <h1>About Us</h1>
         <p>Some content...</p>
       </>
