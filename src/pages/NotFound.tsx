@@ -1,11 +1,17 @@
+import HomeOutlined from '@ant-design/icons/lib/icons/HomeOutlined';
+import Button from 'antd/es/button/button';
 import React from 'react';
+import { Link } from 'react-router-dom';
+import styled from './styled';
 
 class NotFound extends React.Component {
   render() {
     return (
-      <>
-        <h1>Page not found 404</h1>
-      </>
+      <div style={styled.notFound}>
+        <Button icon={<HomeOutlined />} size="large" type="text">
+          <Link to="/"> Home</Link>
+        </Button>
+      </div>
     );
   }
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Input } from 'antd';
+import styled from './styled';
 
 const { Search } = Input;
 
@@ -15,7 +16,7 @@ class SearchBar extends React.Component {
         allowClear
         onSearch={(value: string) => value !== '' && console.log(value)}
         onChange={(e) => this.setState({ value: e.target.value })}
-        style={{ flex: '1', alignSelf: 'center' }}
+        style={styled.searchBar}
         value={this.state.value}
       />
     );
