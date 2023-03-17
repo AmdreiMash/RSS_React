@@ -2,8 +2,8 @@ import React from 'react';
 import Header from 'components/Header';
 import { Content } from 'antd/es/layout/layout';
 import SearchBar from 'components/SerchBar';
-import productsData from 'assets/products';
-import ProductCard from 'components/ProductCard';
+//import productsData from 'assets/products';
+//import ProductCard from 'components/ProductCard';
 import style from './styled';
 
 class HomePage extends React.Component {
