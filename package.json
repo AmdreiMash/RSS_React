@@ -8,7 +8,8 @@
     "build": "tsc && vite build",
     "preview": "vite preview",
     "test": "vitest run --coverage",
-    "deploy": " ntl deploy --prod"
+    "deploy": " ntl deploy --prod",
+    "lint": "npx eslint src***"
   },
   "dependencies": {
     "react": "^18.2.0",
