@@ -2,7 +2,7 @@ const style: { [key: string]: React.CSSProperties } = {
   productContainer: {
     display: 'flex',
     gap: '20px',
-    width: '80%',
+    width: '100%',
     flexWrap: 'wrap',
     justifyContent: 'center',
   },

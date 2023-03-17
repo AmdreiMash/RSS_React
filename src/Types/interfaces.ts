@@ -10,7 +10,3 @@ export interface IPriduct {
     count: number;
   };
 }
-
-//export interface IHome extends React.Component {
-//  products: JSX.Element[];
-//}
