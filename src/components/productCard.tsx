@@ -10,19 +10,35 @@ const rateColor = ['black', 'red', '#E35049', '#E5D751', '#74F272', '#00F509'];
 class ProductCard extends React.Component<{ data: IPriduct }> {
   state: {
     liked: boolean;
+    hover: boolean;
   };
+
   constructor(props: { data: IPriduct }) {
     super(props);
     this.state = {
       liked: false,
+      hover: false,
     };
   }
 
   likeHandler = () => this.setState({ liked: !this.state.liked });
-
+  hoverHandler = () => {
+    this.setState({ hover: !this.state.hover });
+  };
+  boxShadow() {
+    return this.state.hover ? { boxShadow: '2px 10px 8px 0px rgba(34, 60, 80, 0.2)' } : {};
+  }
   render() {
     return (
-      <div style={{ ...styled.productWrapper, flexDirection: 'column' }}>
+      <div
+        style={{
+          ...styled.productWrapper,
+          flexDirection: 'column',
+          ...this.boxShadow(),
+        }}
+        onMouseEnter={this.hoverHandler}
+        onMouseLeave={this.hoverHandler}
+      >
         <Image src={this.props.data.image} width={'40%'} height={'60%'} />
         <div style={styled.productPrice}>{`${this.props.data.price}$`}</div>
         <div style={styled.productInfo}>
