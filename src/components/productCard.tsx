@@ -1,18 +1,18 @@
 import React from 'react';
-import { IPriduct } from '../Types/interfaces';
+import { IProduct } from '../Types/interfaces';
 import { Image } from 'antd';
 import styled from './styled';
 import { Link } from 'react-router-dom';
 import { ReactComponent as Like } from '../assets/like.svg';
 
-class ProductCard extends React.Component<{ data: IPriduct }> {
+class ProductCard extends React.Component<{ data: IProduct }> {
   state: {
     liked: boolean;
     hover: boolean;
     rateColor: string[];
   };
 
-  constructor(props: { data: IPriduct }) {
+  constructor(props: { data: IProduct }) {
     super(props);
     this.state = {
       liked: false,

@@ -1,4 +1,4 @@
-export interface IPriduct {
+export interface IProduct {
   id: number;
   title: string;
   price: number;
@@ -10,9 +10,3 @@ export interface IPriduct {
     count: number;
   };
 }
-
-//export interface IProductCard extends React.Component<{ data: IPriduct }> {
-//  likeHandler: () => void;
-
-//  hoverHandler: () => void;
-//}
