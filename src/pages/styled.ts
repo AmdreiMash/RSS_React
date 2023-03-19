@@ -9,7 +9,7 @@ const style: { [key: string]: React.CSSProperties } = {
   main: { display: 'flex', flexDirection: 'column', alignItems: 'center' },
   mainHeading: { display: 'flex', alignItems: 'center', gap: '30px', width: '90%' },
   notFound: {
-    width: '100vw',
+    width: '90vw',
     height: '90vh',
     backgroundImage: `url('404 Error-rafiki-gray.svg')`,
     backgroundSize: 'contain',
