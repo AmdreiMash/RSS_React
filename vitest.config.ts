@@ -6,7 +6,6 @@ import react from '@vitejs/plugin-react';
 import { defineConfig } from 'vite';
 import svgr from 'vite-plugin-svgr';
 
-// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react(), svgr()],
   test: {
@@ -14,7 +13,7 @@ export default defineConfig({
     environment: 'jsdom',
     setupFiles: ['./src/testsSetup.ts'],
     coverage: {
-      provider: 'istanbul', // or 'c8'
+      provider: 'istanbul',
     },
   },
 });

@@ -43,6 +43,7 @@ class ProductCard extends React.Component<{ data: IProduct }> {
         onMouseLeave={this.hoverHandler}
       >
         <Image src={this.props.data.image} width={'40%'} height={'60%'} />
+
         <div style={styled.productPrice}>{`${this.props.data.price}$`}</div>
 
         <div style={styled.productInfo}>
