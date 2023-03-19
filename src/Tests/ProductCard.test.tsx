@@ -40,12 +40,14 @@ describe('ProductCard', () => {
       </BrowserRouter>
     );
 
-    const Like = container.querySelector<HTMLDivElement>('.like');
+    const Like = container.querySelector<HTMLElement>('.like');
 
     if (!Like) throw new Error('Like not found');
 
+    expect(Like.getAttribute('fill')).toBe('#808080');
+
     await userEvent.click(Like);
 
-    expect(Like.style.backgroundImage).toBe('');
+    expect(Like.getAttribute('fill')).toBe('#FF7979');
   });
 });
