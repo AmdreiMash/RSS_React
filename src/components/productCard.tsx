@@ -21,10 +21,12 @@ class ProductCard extends React.Component<{ data: IPriduct }> {
     };
   }
 
-  likeHandler = () => this.setState({ liked: !this.state.liked });
+  likeHandler = () => this.setState({ ...this.state, liked: !this.state.liked });
+
   hoverHandler = () => {
-    this.setState({ hover: !this.state.hover });
+    this.setState({ ...this.state, hover: !this.state.hover });
   };
+
   boxShadow() {
     return this.state.hover ? { boxShadow: '2px 10px 8px 0px rgba(34, 60, 80, 0.2)' } : {};
   }
