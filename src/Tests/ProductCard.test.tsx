@@ -17,12 +17,12 @@ describe('ProductCard', () => {
   });
 
   it('Shold add shadow if user hover the product card', async () => {
-    render(
+    const { container } = render(
       <BrowserRouter>
         <ProductCard data={productsData[1]} />
       </BrowserRouter>
     );
-    const productCard = document.querySelector<HTMLDivElement>('.card-content');
+    const productCard = container.querySelector<HTMLDivElement>('.card-content');
 
     if (!productCard) return console.error('ProductCard not found');
 
@@ -34,12 +34,13 @@ describe('ProductCard', () => {
   });
 
   it('Like shold work', async () => {
-    render(
+    const { container } = render(
       <BrowserRouter>
         <ProductCard data={productsData[1]} />
       </BrowserRouter>
     );
-    const Like = document.querySelector<HTMLDivElement>('.like');
+
+    const Like = container.querySelector<HTMLDivElement>('.like');
 
     if (!Like) throw new Error('Like not found');
 
