@@ -3,7 +3,7 @@ import { IPriduct } from '../Types/interfaces';
 import { Image } from 'antd';
 import styled from './styled';
 import { Link } from 'react-router-dom';
-import like from '../assets/Like';
+import { ReactComponent as Like } from '../assets/like.svg';
 
 class ProductCard extends React.Component<{ data: IPriduct }> {
   state: {
@@ -58,12 +58,12 @@ class ProductCard extends React.Component<{ data: IPriduct }> {
               {` ${this.props.data.rating.rate}`}
             </span>
           </div>
-          <div
+          <Like
             className="like"
-            style={{
-              ...styled.like,
-              backgroundImage: `url('${this.state.liked ? like.red : like.gray}'`,
-            }}
+            style={styled.like}
+            fill={this.state.liked ? '#FF7979' : '#808080'}
+            height={25}
+            width={25}
             onClick={this.likeHandler}
           />
         </div>
