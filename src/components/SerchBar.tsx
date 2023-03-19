@@ -14,7 +14,6 @@ class SearchBar extends React.Component {
       <Search
         placeholder="Search..."
         allowClear
-        onSearch={(value: string) => value !== '' && console.log(value)}
         onChange={(e) => this.setState({ value: e.target.value })}
         style={styled.searchBar}
         value={this.state.value}

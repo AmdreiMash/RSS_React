@@ -10,3 +10,9 @@ export interface IPriduct {
     count: number;
   };
 }
+
+//export interface IProductCard extends React.Component<{ data: IPriduct }> {
+//  likeHandler: () => void;
+
+//  hoverHandler: () => void;
+//}

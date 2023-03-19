@@ -33,6 +33,9 @@ const styled: { [key: string]: React.CSSProperties } = {
     position: 'absolute',
     bottom: '5px',
     right: '15px',
+    width: '25px',
+    height: '25px',
+    backgroundSize: 'cover',
   },
 };
 

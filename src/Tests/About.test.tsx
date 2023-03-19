@@ -4,8 +4,8 @@ import { describe, it } from 'vitest';
 import { BrowserRouter } from 'react-router-dom';
 import About from '../pages/About';
 
-describe('Header', () => {
-  it('renders page header', () => {
+describe('About', () => {
+  it('renders page About', () => {
     render(
       <BrowserRouter>
         <About />

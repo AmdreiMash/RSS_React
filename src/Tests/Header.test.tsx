@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { describe, it } from 'vitest';
 import Header from '../components/Header';
 import { BrowserRouter } from 'react-router-dom';
