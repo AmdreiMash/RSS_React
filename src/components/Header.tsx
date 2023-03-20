@@ -1,7 +1,7 @@
 import React from 'react';
 import { Menu } from 'antd';
 import type { MenuProps } from 'antd';
-import { HomeOutlined, InfoCircleOutlined } from '@ant-design/icons';
+import { FormOutlined, HomeOutlined, InfoCircleOutlined } from '@ant-design/icons';
 import { Link } from 'react-router-dom';
 
 class Header extends React.Component {
@@ -14,9 +14,14 @@ class Header extends React.Component {
       icon: <HomeOutlined />,
     },
     {
-      label: <Link to={'About'}>About</Link>,
+      label: <Link to={'/About'}>About</Link>,
       key: '/About',
       icon: <InfoCircleOutlined />,
+    },
+    {
+      label: <Link to={'/Form'}>Form</Link>,
+      key: '/Form',
+      icon: <FormOutlined />,
     },
   ];
 
