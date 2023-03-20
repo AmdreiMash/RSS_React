@@ -14,6 +14,7 @@ export default defineConfig({
     setupFiles: ['./src/testsSetup.ts'],
     coverage: {
       provider: 'istanbul',
+      all: true,
     },
   },
 });
