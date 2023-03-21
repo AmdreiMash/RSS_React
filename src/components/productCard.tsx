@@ -1,7 +1,7 @@
 import React from 'react';
 import { IProduct } from '../Types/interfaces';
 import { Image } from 'antd';
-import styled from './styled';
+import styled from './steled/styled';
 import { Link } from 'react-router-dom';
 import { ReactComponent as Like } from '../assets/like.svg';
 

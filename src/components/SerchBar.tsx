@@ -1,6 +1,6 @@
 import React from 'react';
 import { Input } from 'antd';
-import styled from './styled';
+import styled from './steled/styled';
 
 const { Search } = Input;
 
