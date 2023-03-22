@@ -3,7 +3,7 @@ import Header from '../components/Header';
 import Content from 'antd/es/layout/layout';
 import SearchBar from '../components/SerchBar';
 import style from './styled';
-import Products from '../assets/products';
+import Products from '../../assets/products';
 import ProductCard from '../components/ProductCard';
 
 class HomePage extends React.Component {
