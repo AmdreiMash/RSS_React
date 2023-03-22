@@ -5,7 +5,7 @@ const FormCardWrapper = styled.div<{ active: boolean }>`
   min-height: 100%;
   display: flex;
   flexdirection: column;
-  border: 1px solid red;
+  border: 1px solid rgba(5, 5, 5, 0.06);
   top: 0px;
   position: absolute;
   right: 0;
