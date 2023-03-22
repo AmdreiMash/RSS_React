@@ -8,7 +8,9 @@ const Wrapper = styled.div<{ active: boolean }>`
   border: 1px solid red;
   top: 0px;
   position: relative;
-  left: ${(props) => (props.active ? '0px' : '-400px')};
+  left: 0;
+  transform: translate(${(props) => (props.active ? '0px' : '-400px')});
+  transition: transform 0.3s ease-in-out;
 `;
 
 export default Wrapper;

@@ -17,7 +17,9 @@ class Saider extends React.Component {
     return (
       <Wrapper active={this.state.show}>
         <h1>Saider</h1>
-        <ShowButton onClick={this.showHandler}>add card</ShowButton>
+        <ShowButton onClick={this.showHandler} active={this.state.show}>
+          add card
+        </ShowButton>
       </Wrapper>
     );
   }
