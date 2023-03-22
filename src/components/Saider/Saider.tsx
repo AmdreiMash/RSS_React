@@ -1,24 +1,15 @@
 import React from 'react';
 import Wrapper from './Wrapper';
 import ShowButton from './showButton';
+import { SaiderProps } from 'Types/interfaces';
 
-class Saider extends React.Component {
-  state = {
-    show: true,
-  };
-
-  showHandler = () => {
-    this.setState({
-      ...this.state,
-      show: !this.state.show,
-    });
-  };
+class Saider extends React.Component<SaiderProps> {
   render() {
     return (
-      <Wrapper active={this.state.show}>
+      <Wrapper active={this.props.showForm}>
         <h1>Saider</h1>
-        <ShowButton onClick={this.showHandler} active={this.state.show}>
-          add card
+        <ShowButton onClick={this.props.showFormHandler} active={this.props.showForm}>
+          Add card
         </ShowButton>
       </Wrapper>
     );

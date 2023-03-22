@@ -12,8 +12,8 @@
     "lint": "npx eslint src***",
     "clean": "rm src/***.js"
   },
-
   "dependencies": {
+    "normalize.css": "^8.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "styled-components": "^5.3.9"

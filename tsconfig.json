@@ -16,7 +16,7 @@
     "baseUrl": "./src",
     "resolveJsonModule": true
   },
-  "include": ["src", "styled.d.ts", ".eslintrc.json", "vite.ts.config"],
+  "include": ["src", "styled.d.ts", ".eslintrc.json", "vite.ts.config", "src/assets"],
   "references": [{ "path": "./tsconfig.node.json" }],
   "types": ["vitest/globals"]
 }

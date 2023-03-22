@@ -10,3 +10,11 @@ export interface IProduct {
     count: number;
   };
 }
+
+export interface FormCardsProps {
+  showForm: boolean;
+}
+
+export interface SaiderProps extends FormCardsProps {
+  showFormHandler: () => void;
+}
