@@ -37,6 +37,7 @@ const styled: { [key: string]: React.CSSProperties } = {
     height: '25px',
     backgroundSize: 'cover',
   },
+  label: { display: 'flex', gap: '10px' },
 };
 
 export default styled;

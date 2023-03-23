@@ -10,7 +10,7 @@
     "test": "vitest run --coverage",
     "deploy": " ntl deploy --prod",
     "lint": "npx eslint src***",
-    "clean": "rm src/***.js"
+    "clean": "rm src/*.js && rm src/**/*.js && rm src/**/**/*.js "
   },
   "dependencies": {
     "normalize.css": "^8.0.1",
