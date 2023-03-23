@@ -1,35 +1,85 @@
+import React, { ChangeEvent, FormEvent } from 'react';
 import styled from '../steled/styled';
-import React from 'react';
 import FormWrapper from './FormWrapper';
 import Input from './Input';
 import InputFile from './InputFile';
 import LabelFile from './LabelFile';
+import Button from './Button';
 
 class Form extends React.Component {
-  state = { staus: true };
+  state = {
+    staus: {
+      name: true,
+      email: true,
+      birtday: true,
+      country: true,
+      gender: true,
+      file: true,
+      policy: true,
+    },
+    CardData: {
+      name: '',
+      email: '',
+      birtday: '',
+      country: '',
+      gender: '',
+      file: '',
+      policy: false,
+    },
+  };
+  inputHandler = (event: ChangeEvent) => {
+    const { name, value } = event.target as HTMLInputElement;
+    event.target &&
+      this.setState({
+        ...this.state,
+        CardData: { ...this.state.CardData, [name]: value },
+      });
+  };
+  submitHeader = (e: FormEvent) => {
+    const { CardData, staus } = this.state;
+    e.preventDefault();
+    console.log(CardData);
+  };
   render() {
     return (
-      <FormWrapper>
+      <FormWrapper onSubmit={this.submitHeader}>
         <label>
           Name
-          <Input type="text" status={this.state.staus} />
+          <Input
+            name="name"
+            type="text"
+            status={this.state.staus.name}
+            value={this.state.CardData.name}
+            onChange={this.inputHandler}
+          />
         </label>
         <label>
           Email
-          <Input type="email" status={this.state.staus} />
+          <Input
+            name="email"
+            type="email"
+            status={this.state.staus.email}
+            onChange={this.inputHandler}
+          />
         </label>
         <label style={styled.label}>
           Birthday
-          <input type="date" max={'2015-01-01'} min={'1940-01-01'} />
+          <input
+            name="birthday"
+            type="date"
+            max={'2015-01-01'}
+            min={'1940-01-01'}
+            onChange={this.inputHandler}
+          />
         </label>
         <label style={styled.label}>
           Сountry
-          <select name="Сountry" style={styled.label}>
-            <option value="value1">Belarus</option>
-            <option value="value2">Russia</option>
-            <option value="value3">Ukraine</option>
-            <option value="value4">Polna</option>
-            <option value="value5">other</option>
+          <select name="country" style={styled.label} onChange={this.inputHandler}>
+            <option value="Belarus">Belarus</option>
+            <option value="Russia">Russia</option>
+            <option value="Ukraine">Ukraine</option>
+            <option value="Polna">Polna</option>
+            <option value="other">other</option>
           </select>
         </label>
         <div style={styled.label}>
@@ -42,20 +92,21 @@ class Form extends React.Component {
             male
           </label>
         </div>
-        {/*<label style={styled.label}>
-          <input type="radio" name="gender" value="undecided" />
-          still undecided
-        </label>*/}
         <LabelFile style={styled.label}>
           Add foto
-          <InputFile type="file" />
+          <InputFile type="file" name="file" onChange={this.inputHandler} />
         </LabelFile>
         <label style={{ ...styled.label, fontSize: '0.7em' }}>
           <p>
             I have read and agree with the <a href="#">privacy policy</a>
           </p>
-          <input type="checkbox" />
+          <input type="checkbox" name="policy" />
         </label>
+        <button style={{ padding: '0', border: '0', background: 'none', boxShadow: 'none' }}>
+          <Button active={false} role="button">
+            Submit form
+          </Button>
+        </button>
       </FormWrapper>
     );
   }
