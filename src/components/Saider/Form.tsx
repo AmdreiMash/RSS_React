@@ -43,25 +43,18 @@ class Form extends React.Component {
   render() {
     return (
       <FormWrapper onSubmit={this.submitHeader}>
-        <label>
-          Name
-          <Input
-            name="name"
-            type="text"
-            status={this.state.staus.name}
-            value={this.state.CardData.name}
-            onChange={this.inputHandler}
-          />
-        </label>
-        <label>
-          Email
-          <Input
-            name="email"
-            type="email"
-            status={this.state.staus.email}
-            onChange={this.inputHandler}
-          />
-        </label>
+        <Input
+          name="name"
+          status={this.state.staus.name}
+          value={this.state.CardData.name}
+          onChange={this.inputHandler}
+        />
+        <Input
+          value={this.state.CardData.email}
+          name="email"
+          status={this.state.staus.email}
+          onChange={this.inputHandler}
+        />
         <label style={styled.label}>
           Birthday
           <input
