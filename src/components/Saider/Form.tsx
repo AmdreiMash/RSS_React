@@ -1,10 +1,10 @@
 import React, { ChangeEvent, FormEvent } from 'react';
-import styled from '../steled/styled';
-import FormWrapper from './FormWrapper';
+import styled from '../Elements/styled';
+import FormWrapper from './Elements/FormWrapper';
 import Input from './Input';
-import InputFile from './InputFile';
-import LabelFile from './LabelFile';
-import Button from './Button';
+import InputFile from './Elements/InputFile';
+import LabelFile from './Elements/LabelFile';
+import Button from './Elements/Button';
 
 class Form extends React.Component {
   state = {
@@ -85,16 +85,18 @@ class Form extends React.Component {
             male
           </label>
         </div>
-        <LabelFile style={styled.label}>
+        <LabelFile staus={false} message={'Add your foto'} style={styled.label}>
           Add foto
           <InputFile type="file" name="file" onChange={this.inputHandler} />
         </LabelFile>
+
         <label style={{ ...styled.label, fontSize: '0.7em' }}>
           <p>
             I have read and agree with the <a href="#">privacy policy</a>
           </p>
           <input type="checkbox" name="policy" />
         </label>
+
         <button style={{ padding: '0', border: '0', background: 'none', boxShadow: 'none' }}>
           <Button active={false} role="button">
             Submit form

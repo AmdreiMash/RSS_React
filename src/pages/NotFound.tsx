@@ -2,7 +2,7 @@ import HomeOutlined from '@ant-design/icons/lib/icons/HomeOutlined';
 import Button from 'antd/es/button/button';
 import React from 'react';
 import { Link } from 'react-router-dom';
-import styled from './styled';
+import styled from './styles';
 
 class NotFound extends React.Component {
   render() {

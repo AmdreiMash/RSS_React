@@ -1,13 +1,13 @@
 import styled from 'styled-components';
-import Input from '../../../assets/upload.svg';
-
-const LabelFile = styled.label`
+import upload from '../../../../assets/upload.svg';
+import Label from './Lable';
+const LabelFile = styled(Label)`
   position: relative;
   opacity: 0.7;
   cursor: pointer;
   &:before {
     display: absolute;
-    content: url('${Input}');
+    content: url('${upload}');
     position: absolute;
     left: 60px;
     top: -5px;

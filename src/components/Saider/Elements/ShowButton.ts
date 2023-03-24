@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Arrow from '../../../assets/arrows_icon.svg';
+import Arrow from '../../../../assets/arrows_icon.svg';
 
 const ShowButton = styled.div<{ active: boolean }>`
   position: absolute;
@@ -11,7 +11,6 @@ const ShowButton = styled.div<{ active: boolean }>`
   cursor: pointer;
 
   &:before {
-    display: absolute;
     content: url('${Arrow}');
     position: absolute;
     left: ${(props) => (props.active ? '-25px' : '60px')};

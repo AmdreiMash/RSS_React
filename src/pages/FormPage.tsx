@@ -1,8 +1,8 @@
 import React from 'react';
 import Header from '../components/Header';
-import Wrapper from '../components/steled/PageWrapper';
+import Wrapper from '../components/Elements/PageWrapper';
 import Saider from '../components/Saider/Saider';
-import FormPageWrapper from '../components/steled/FormPageWrapper';
+import FormPageWrapper from '../components/Elements/FormPageWrapper';
 import FormCards from '../components/FormCard/FormCard';
 
 class FormPage extends React.Component {

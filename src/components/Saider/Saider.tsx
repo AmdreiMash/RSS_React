@@ -1,6 +1,6 @@
 import React from 'react';
-import Wrapper from './SaiderWrapper';
-import ShowButton from './showButton';
+import Wrapper from './Elements/SaiderWrapper';
+import ShowButton from './Elements/ShowButton';
 import { SaiderProps } from 'Types/interfaces';
 import Form from './Form';
 
