@@ -1,7 +1,7 @@
 import React, { ChangeEvent, FormEvent } from 'react';
-import styled from '../Elements/styled';
+import styled from '../styled';
 import FormWrapper from './Elements/FormWrapper';
-import Input from './Input';
+import Input from './TextInput';
 import InputFile from './Elements/InputFile';
 import LabelFile from './Elements/LabelFile';
 import Button from './Elements/Button';
@@ -85,7 +85,7 @@ class Form extends React.Component {
             male
           </label>
         </div>
-        <LabelFile staus={false} message={'Add your foto'} style={styled.label}>
+        <LabelFile status={false} message={'Add your foto'} style={styled.label}>
           Add foto
           <InputFile type="file" name="file" onChange={this.inputHandler} />
         </LabelFile>

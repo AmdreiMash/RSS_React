@@ -1,12 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
 import { InputProps } from 'Types/PropsType';
-import MyInput from './Elements/Input';
+import Lable from './Elements/Lable';
+import MyInput from './Elements/MyInput';
 
 class Input extends React.Component<InputProps> {
   render() {
     return (
-      <label>
+      <Lable status={this.props.status} message={`Entre your ${this.props.name}`}>
         {this.props.name}
         <MyInput
           type="text"
@@ -15,7 +16,7 @@ class Input extends React.Component<InputProps> {
           status={this.props.status}
           onChange={this.props.onChange}
         />
-      </label>
+      </Lable>
     );
   }
 }
