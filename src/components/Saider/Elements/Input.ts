@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const MyInput = styled.input<{ status: boolean }>`
+const Input = styled.input<{ status: boolean }>`
   border: none;
   height: 20px;
   width: 70%;
@@ -15,4 +15,4 @@ const MyInput = styled.input<{ status: boolean }>`
   }
 `;
 
-export default MyInput;
+export default Input;

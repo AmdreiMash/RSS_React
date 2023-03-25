@@ -1,7 +1,7 @@
 import React from 'react';
 import Wrapper from './Elements/SaiderWrapper';
 import ShowButton from './Elements/ShowButton';
-import { SaiderProps } from 'Types/interfaces';
+import { SaiderProps } from 'Types/Interfaces';
 import Form from './Form';
 
 class Saider extends React.Component<SaiderProps> {

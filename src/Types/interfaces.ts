@@ -18,3 +18,11 @@ export interface FormCardsProps {
 export interface SaiderProps extends FormCardsProps {
   showFormHandler: () => void;
 }
+type FormValye = {
+  status: boolean;
+  ref: React.RefObject<HTMLInputElement> | React.RefObject<HTMLSelectElement>;
+};
+
+export interface FormState {
+  [key: string]: boolean;
+}
