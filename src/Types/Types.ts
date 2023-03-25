@@ -13,3 +13,16 @@ export type RadioProps = {
   male: Ref;
   female: Ref;
 };
+
+export type TData = string | boolean;
+
+export type FormValue = {
+  [key: string]: string | boolean;
+  name: TData;
+  email: TData;
+  birtday: TData;
+  country: TData;
+  file: TData;
+  policy: TData;
+  gender: TData;
+};

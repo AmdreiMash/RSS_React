@@ -6,7 +6,7 @@ const FormWrapper = styled.form`
   justify-content: center;
   width: 100%;
   padding: 0.5em;
-  gap: 20px;
+  gap: 25px;
 `;
 
 export default FormWrapper;

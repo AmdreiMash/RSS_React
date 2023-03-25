@@ -1,3 +1,5 @@
+import { FormValue } from './Types';
+
 export interface IProduct {
   id: number;
   title: string;
@@ -17,11 +19,8 @@ export interface FormCardsProps {
 
 export interface SaiderProps extends FormCardsProps {
   showFormHandler: () => void;
+  addNewCard: (data: FormValue) => void;
 }
-type FormValye = {
-  status: boolean;
-  ref: React.RefObject<HTMLInputElement> | React.RefObject<HTMLSelectElement>;
-};
 
 export interface FormState {
   [key: string]: boolean;

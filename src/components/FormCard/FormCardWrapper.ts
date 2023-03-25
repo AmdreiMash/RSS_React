@@ -10,6 +10,7 @@ const FormCardWrapper = styled.div<{ active: boolean }>`
   position: absolute;
   right: 0;
   transition: all 0.3s ease-in-out;
+  box-sizing: border-box;
 `;
 
 export default FormCardWrapper;

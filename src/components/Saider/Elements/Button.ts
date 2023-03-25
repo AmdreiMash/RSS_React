@@ -6,7 +6,8 @@ const Button = styled.div`
   text-align: center;
   width: max-content;
   cursor: pointer;
-  align-self: center;
+  margin: 0 auto;
+
   &:hover {
     opacity: 1;
     border-bottom: 2px solid #1677ff;
