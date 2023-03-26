@@ -61,22 +61,17 @@ class Form extends React.Component<{ addNewCard(data: FormValue): void }, FormSt
   };
 
   resetForm = () => {
-    resetValues([this.name, this.email, this.birtday]);
-    this.country && this.country.current && this.country.current.value
-      ? (this.country.current.value = 'Country')
-      : false;
-    this.policy && this.policy.current && this.policy.current.checked
-      ? (this.policy.current.checked = false)
-      : false;
-    this.male && this.male.current && this.male.current.checked
-      ? (this.male.current.checked = false)
-      : false;
-    this.female && this.female.current && this.female.current.checked
-      ? (this.female.current.checked = false)
-      : false;
-    this.file && this.file.current && this.file.current.files
-      ? (this.file.current.files = new DataTransfer().files)
-      : false;
+    resetValues([this.name, this.email, this.birtday, this.policy, this.male, this.female]);
+
+    this.country &&
+      this.country.current &&
+      this.country.current.value &&
+      (this.country.current.value = 'Country');
+
+    this.file &&
+      this.file.current &&
+      this.file.current.files &&
+      (this.file.current.files = new DataTransfer().files);
   };
 
   submitHeader = (e: FormEvent) => {
