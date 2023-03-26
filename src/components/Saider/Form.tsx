@@ -62,12 +62,10 @@ class Form extends React.Component<{ addNewCard(data: FormValue): void }, FormSt
 
   resetForm = () => {
     resetValues([this.name, this.email, this.birtday, this.policy, this.male, this.female]);
-
     this.country &&
       this.country.current &&
       this.country.current.value &&
       (this.country.current.value = 'Country');
-
     this.file &&
       this.file.current &&
       this.file.current.files &&
@@ -85,6 +83,7 @@ class Form extends React.Component<{ addNewCard(data: FormValue): void }, FormSt
         check[key] = true;
       }
     }
+
     e.preventDefault();
 
     this.setState({ ...this.state, ...check });
