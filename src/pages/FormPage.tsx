@@ -15,14 +15,12 @@ class FormPage extends React.Component {
   };
 
   showFormHandler = () => {
-    console.log('showFormHandler');
     this.setState({ ...this.state, showForm: !this.state.showForm });
   };
 
   addNewCard = (data: FormValue) => {
     this.setState({ ...this.state, cards: [...this.state.cards, data] });
     this.setState({ showMessage: true });
-    console.log();
     setTimeout(() => {
       this.setState({ showMessage: false });
     }, 1500);
