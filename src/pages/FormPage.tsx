@@ -10,17 +10,7 @@ import Message from '../components/Saider/Elements/SubmitMessage';
 class FormPage extends React.Component {
   state = {
     showForm: false,
-    cards: [
-      {
-        birtday: '1994-02-17',
-        country: 'Ukraine',
-        email: 'Ahdma@mail.ru',
-        file: 'blob:http://localhost:8080/2226c4ed-9820-45be-b5d6-075707c71a97',
-        gender: 'male',
-        name: 'Андрей',
-        policy: true,
-      },
-    ] as CardData[],
+    cards: [] as CardData[],
     showMessage: false,
   };
 
