@@ -1,6 +1,6 @@
 import React from 'react';
-import { CardData, FormValue } from 'Types/Types';
-import CardWrapper from './CardWrapper';
+import { CardData } from 'Types/Types';
+import CardWrapper from './Elements/CardWrapper';
 
 class FormCard extends React.Component<{ data: CardData }> {
   render() {

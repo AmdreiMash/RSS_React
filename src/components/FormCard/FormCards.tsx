@@ -1,5 +1,5 @@
 import React from 'react';
-import FormCardsWrapper from './FormCardsWrapper';
+import FormCardsWrapper from './Elements/FormCardsWrapper';
 import { FormCardsProps } from '../../Types/Interfaces';
 import FormCard from './FormCard';
 

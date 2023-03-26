@@ -1,5 +1,3 @@
-import { ReactElement } from 'react';
-
 export type Ref = React.RefObject<HTMLInputElement>;
 
 export type InputProps = {
