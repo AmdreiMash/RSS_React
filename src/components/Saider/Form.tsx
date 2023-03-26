@@ -90,6 +90,7 @@ class Form extends React.Component<{ addNewCard(data: FormValue): void }, FormSt
 
     if (!Object.values(check).includes(false)) {
       this.props.addNewCard(data);
+      console.log(data);
       this.resetForm();
     }
   };

@@ -26,3 +26,14 @@ export type FormValue = {
   policy: TData;
   gender: TData;
 };
+
+export type CardData = {
+  [key: string]: string | boolean;
+  name: string;
+  email: string;
+  birtday: string;
+  country: string;
+  file: string;
+  policy: boolean;
+  gender: string;
+};
