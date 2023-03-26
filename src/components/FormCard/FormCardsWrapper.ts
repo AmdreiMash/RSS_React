@@ -6,6 +6,9 @@ const FormCardsWrapper = styled.div<{ active: boolean }>`
   display: flex;
   flexdirection: column;
   border: 1px solid rgba(5, 5, 5, 0.06);
+  padding: 25px;
+  flex-wrap: wrap;
+  gap: 10px;
   top: 0px;
   position: absolute;
   right: 0;

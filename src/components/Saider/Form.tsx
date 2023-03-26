@@ -106,7 +106,7 @@ class Form extends React.Component<{ addNewCard(data: FormValue): void }, FormSt
             name="name"
           />
         </Label>
-        <Label status={this.state.email} message={errorMessage.email}>
+        <Label status={this.state.email} message={errorMessage.email} bottom={'-25px'}>
           Email
           <Input ref={this.email} name="email" status={this.state.email} />
         </Label>

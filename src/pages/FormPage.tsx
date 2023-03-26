@@ -30,7 +30,6 @@ class FormPage extends React.Component {
   };
 
   addNewCard = (data: FormValue) => {
-    //const newCards = this.state.cards.push(data as CardData);
     this.setState({ ...this.state, cards: [...this.state.cards, data] });
     this.setState({ showMessage: true });
     console.log();

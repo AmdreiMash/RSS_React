@@ -5,18 +5,21 @@ import CardWrapper from './CardWrapper';
 class FormCard extends React.Component<{ data: CardData }> {
   render() {
     const { data } = this.props;
-    const { name, email, country, policy, birtday, gender } = data;
+    const { name, email, country, policy, birtday, gender, file } = data;
     return (
       <CardWrapper>
-        <p>Name: {name}</p>
-        <p>Email: {email}</p>
-        <p>
-          Birtday:
-          {typeof birtday === 'string' && birtday.split('-').join('.')}
-        </p>
-        <p>Country: {country}</p>
-        <p>Gender: {gender}</p>
-        <p>Аdopted the policy: {String(policy)}</p>
+        <img src={file} alt="img" style={{ maxHeight: '295px' }} />
+        <div style={{ display: 'flex', flexDirection: 'column' }}>
+          <span>Name: {name}</span>
+          <span>Email: {email}</span>
+          <span>
+            Birtday:
+            {typeof birtday === 'string' && birtday.split('-').join('.')}
+          </span>
+          <span>Country: {country}</span>
+          <span>Gender: {gender}</span>
+          <span>Аdopted the policy: {String(policy)}</span>
+        </div>
       </CardWrapper>
     );
   }
