@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Header from '../components/Header';
 import Wrapper from '../components/Elements/PageWrapper';
 import Saider from '../components/Saider/Saider';
@@ -7,41 +7,33 @@ import FormCards from '../components/FormCard/FormCards';
 import { FormValue, CardData } from '../Types/Types';
 import Message from '../components/Saider/Elements/SubmitMessage';
 
-class FormPage extends React.Component {
-  state = {
-    showForm: false,
-    cards: [] as CardData[],
-    showMessage: false,
+const FormPage = () => {
+  const [showForm, showFormTogglet] = useState(false);
+  const [cards, setCards] = useState([] as CardData[]);
+  const [showMessage, showMessageTogglet] = useState(false);
+
+  const showFormHandler = () => {
+    showFormTogglet(!showForm);
   };
 
-  showFormHandler = () => {
-    this.setState({ ...this.state, showForm: !this.state.showForm });
-  };
-
-  addNewCard = (data: FormValue) => {
-    this.setState({ ...this.state, cards: [...this.state.cards, data] });
-    this.setState({ showMessage: true });
+  const addNewCard = (data: FormValue) => {
+    setCards([...cards, data as CardData]);
+    showMessageTogglet(true);
     setTimeout(() => {
-      this.setState({ showMessage: false });
+      showMessageTogglet(false);
     }, 1500);
   };
 
-  render() {
-    return (
-      <Wrapper>
-        <Message showe={this.state.showMessage}>Successfully</Message>
-        <Header />
-        <FormPageWrapper>
-          <Saider
-            showForm={this.state.showForm}
-            showFormHandler={this.showFormHandler}
-            addNewCard={this.addNewCard}
-          />
-          <FormCards showForm={this.state.showForm} cards={this.state.cards} />
-        </FormPageWrapper>
-      </Wrapper>
-    );
-  }
-}
+  return (
+    <Wrapper>
+      <Message showe={showMessage}>Successfully</Message>
+      <Header />
+      <FormPageWrapper>
+        <Saider showForm={showForm} showFormHandler={showFormHandler} addNewCard={addNewCard} />
+        <FormCards showForm={showForm} cards={cards} />
+      </FormPageWrapper>
+    </Wrapper>
+  );
+};
 
 export default FormPage;
