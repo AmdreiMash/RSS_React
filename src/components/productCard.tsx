@@ -1,5 +1,5 @@
 import React from 'react';
-import { IProduct } from '../Types/Interfaces';
+import { IProduct } from '../Types/interfaces';
 import { Image } from 'antd';
 import styled from './styled';
 import { Link } from 'react-router-dom';
