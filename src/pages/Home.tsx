@@ -17,7 +17,7 @@ const HomePage = () => {
         </div>
         <div style={{ ...style.productContainer }}>
           {Products.map((e) => (
-            <ProductCard data={e} key={e.id} />
+            <ProductCard key={e.id} {...e} />
           ))}
         </div>
       </Content>
