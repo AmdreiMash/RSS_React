@@ -5,7 +5,7 @@ const Message = styled.span<{ showe: boolean }>`
   margin: 0 auto;
   transform: translateY(${(props) => (props.showe ? '45px' : '-100px')});
   color: green;
-  position: relative;
+  position: absolute;
   transition: transform 0.5s ease;
 
   &:after {
