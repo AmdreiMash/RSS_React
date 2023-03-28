@@ -4,7 +4,7 @@ import FormWrapper from './Elements/FormWrapper';
 import Input from './Elements/Input';
 import InputFile from './Elements/InputFile';
 import LabelFile from './Elements/LabelFile';
-import { FormState } from 'Types/Interfaces';
+import { FormState } from 'Types/interfaces';
 import Label from './Elements/Lable';
 import errorMessage from '../../ErrorMessages';
 import Select from './Select';
