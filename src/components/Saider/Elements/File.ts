@@ -5,8 +5,8 @@ const InputFile = styled.input`
   height: 0.1px;
   opacity: 0;
   overflow: hidden;
-  position: absolute;
-  z-index: -1;
+  position: relevant;
+  z-index: 1;
 `;
 
 export default InputFile;

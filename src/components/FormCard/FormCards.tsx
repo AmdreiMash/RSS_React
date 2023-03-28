@@ -3,16 +3,15 @@ import FormCardsWrapper from './Elements/FormCardsWrapper';
 import { FormCardsProps } from '../../Types/interfaces';
 import FormCard from './FormCard';
 
-class FormCards extends React.Component<FormCardsProps> {
-  render() {
-    return (
-      <FormCardsWrapper active={this.props.showForm}>
-        {this.props.cards.map((data, index) => (
-          <FormCard key={index} data={data} />
-        ))}
-      </FormCardsWrapper>
-    );
-  }
-}
+const FormCards = (props: FormCardsProps) => {
+  const { showForm, cards } = props;
+  return (
+    <FormCardsWrapper active={showForm}>
+      {cards.map((data, index) => (
+        <FormCard key={`${index}`} {...data} />
+      ))}
+    </FormCardsWrapper>
+  );
+};
 
 export default FormCards;

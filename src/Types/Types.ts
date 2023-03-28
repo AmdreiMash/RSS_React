@@ -15,7 +15,7 @@ export type RadioProps = {
 export type TData = string | boolean;
 
 export type FormValue = {
-  [key: string]: string | boolean;
+  [value: string]: string | boolean;
   name: TData;
   email: TData;
   birtday: TData;

@@ -39,9 +39,9 @@ const ProductCard = (data: IProduct) => {
         </div>
         <div style={styled.productText}>
           Raiting:
-          {/*<span
+          <span
             style={{ color: `${rateColor[Math.floor(rating.rate)]}` }}
-          >{` ${rating.rate}`}</span>*/}
+          >{` ${rating.rate}`}</span>
         </div>
         <Like
           className="like"

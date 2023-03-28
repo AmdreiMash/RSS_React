@@ -2,7 +2,7 @@ import React, { FormEvent } from 'react';
 import styled from '../styled';
 import FormWrapper from './Elements/FormWrapper';
 import Input from './Elements/Input';
-import InputFile from './Elements/InputFile';
+import InputFile from './Elements/File';
 import LabelFile from './Elements/LabelFile';
 import { FormState } from 'Types/interfaces';
 import Label from './Elements/Lable';
@@ -17,6 +17,7 @@ import emailValidation from '../../utils/emailValidarion';
 import { FormValue } from '../../Types/Types';
 import birthdayValidation from '../../utils/birthdayValidation';
 import resetValues from '../../utils/resetValues';
+import InputImg from './InputImg';
 
 class Form extends React.Component<{ addNewCard(data: FormValue): void }, FormState> {
   constructor(props: { addNewCard(data: FormValue): void }) {
@@ -121,10 +122,11 @@ class Form extends React.Component<{ addNewCard(data: FormValue): void }, FormSt
           Gender:
           <Radio male={this.male} female={this.female} />
         </Label>
-        <LabelFile status={this.state.file} message={'Add your foto'} style={styled.label}>
+        <InputImg status={this.state.file} ref={this.file} />
+        {/*<LabelFile status={this.state.file} message={'Add your foto'} style={styled.label}>
           Add foto
           <InputFile ref={this.file} type="file" name="file" accept="image/*" multiple={false} />
-        </LabelFile>
+        </LabelFile>*/}
         <Label
           status={this.state.policy}
           message={errorMessage.policy}
