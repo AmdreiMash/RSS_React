@@ -26,7 +26,7 @@ class Form extends React.Component<{ addNewCard(data: FormValue): void }, FormSt
     this.state = {
       name: true,
       email: true,
-      birtday: true,
+      birthday: true,
       country: true,
       gender: true,
       file: true,
@@ -36,7 +36,7 @@ class Form extends React.Component<{ addNewCard(data: FormValue): void }, FormSt
 
   name = React.createRef<HTMLInputElement>();
   email = React.createRef<HTMLInputElement>();
-  birtday = React.createRef<HTMLInputElement>();
+  birthday = React.createRef<HTMLInputElement>();
   country = React.createRef<HTMLSelectElement>();
   file = React.createRef<HTMLInputElement>();
   policy = React.createRef<HTMLInputElement>();
@@ -46,7 +46,7 @@ class Form extends React.Component<{ addNewCard(data: FormValue): void }, FormSt
   getData = () => {
     const name = nameValidation(this.name);
     const email = emailValidation(this.email);
-    const birtday = birthdayValidation(this.birtday);
+    const birthday = birthdayValidation(this.birthday);
     const country = getValue(this.country) === 'Country' ? false : getValue(this.country);
     const img = getFile(this.file);
     const file = img ? URL.createObjectURL(img) : false;
@@ -57,12 +57,12 @@ class Form extends React.Component<{ addNewCard(data: FormValue): void }, FormSt
       ? 'female'
       : false;
 
-    const data: FormValue = { gender, name, email, birtday, country, file, policy };
+    const data: FormValue = { gender, name, email, birthday, country, file, policy };
     return data;
   };
 
   resetForm = () => {
-    resetValues([this.name, this.email, this.birtday, this.policy, this.male, this.female]);
+    resetValues([this.name, this.email, this.birthday, this.policy, this.male, this.female]);
     this.country &&
       this.country.current &&
       this.country.current.value &&
@@ -110,9 +110,9 @@ class Form extends React.Component<{ addNewCard(data: FormValue): void }, FormSt
           Email
           <Input ref={this.email} name="email" status={this.state.email} />
         </Label>
-        <Label status={this.state.birtday} message={errorMessage.birthday}>
+        <Label status={this.state.birthday} message={errorMessage.birthday}>
           Birthday
-          <input name="birthday" type="date" ref={this.birtday} />
+          <input name="birthday" type="date" ref={this.birthday} />
         </Label>
         <Label status={this.state.country} message={errorMessage.country}>
           Сountry

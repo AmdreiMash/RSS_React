@@ -5,7 +5,7 @@ import { BrowserRouter } from 'react-router-dom';
 import FormCard from '../components/FormCard/FormCard';
 
 const data = {
-  birtday: '1999-11-11',
+  birthday: '1999-11-11',
   country: 'Belarus',
   email: 'Ahdma@mail.ru',
   file: 'blob:http://localhost:8081/62d32cbf-cdf6-47fd-a9fe-6b8f055884d8',

@@ -8,6 +8,7 @@ const Input = styled.input<{ status: boolean }>`
   border-bottom: solid 1px;
   border-color: ${(props) => (props.status ? 'rgba(5, 5, 5, 0.3)' : '#DC143C')};
   dordering: decimal;
+
   &:focus {
     outline: none;
     border-bottom: solid 1px;

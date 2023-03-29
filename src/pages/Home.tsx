@@ -4,7 +4,7 @@ import Content from 'antd/es/layout/layout';
 import SearchBar from '../components/SerchBar';
 import style from './styles';
 import Products from '../../assets/products';
-import ProductCard from '../components/productCard';
+import ProductCard from '../components/ProductCard';
 
 const HomePage = () => {
   return (

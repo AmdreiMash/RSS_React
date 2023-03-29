@@ -18,7 +18,7 @@ export type FormValue = {
   [value: string]: string | boolean;
   name: TData;
   email: TData;
-  birtday: TData;
+  birthday: TData;
   country: TData;
   file: TData;
   policy: TData;
@@ -29,7 +29,7 @@ export type CardData = {
   [key: string]: string | boolean;
   name: string;
   email: string;
-  birtday: string;
+  birthday: string;
   country: string;
   file: string;
   policy: boolean;

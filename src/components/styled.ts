@@ -12,6 +12,7 @@ const styled: { [key: string]: React.CSSProperties } = {
     alignItems: 'center',
     paddingTop: '5px',
   },
+
   productText: { width: '100%', marginLeft: '8px' },
   SearchBar: { flex: '1', alignSelf: 'center' },
   productName: {
@@ -24,11 +25,13 @@ const styled: { [key: string]: React.CSSProperties } = {
     whiteSpace: 'nowrap',
     overflow: 'hidden',
   },
+
   productInfo: {
     width: '100%',
     position: 'relative',
     paddingBottom: '10px',
   },
+
   like: {
     position: 'absolute',
     bottom: '5px',
@@ -37,6 +40,7 @@ const styled: { [key: string]: React.CSSProperties } = {
     height: '25px',
     backgroundSize: 'cover',
   },
+
   label: { display: 'flex', gap: '10px' },
 };
 

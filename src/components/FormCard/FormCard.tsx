@@ -3,7 +3,7 @@ import { CardData } from 'Types/Types';
 import CardWrapper from './Elements/CardWrapper';
 
 const FormCard = (data: CardData) => {
-  const { name, email, country, policy, birtday, gender, file } = data;
+  const { name, email, country, policy, birthday, gender, file } = data;
   return (
     <CardWrapper>
       <img src={file} alt="img" style={{ maxHeight: '295px' }} />
@@ -11,8 +11,8 @@ const FormCard = (data: CardData) => {
         <span>Name: {name}</span>
         <span>Email: {email}</span>
         <span>
-          Birtday:
-          {typeof birtday === 'string' && birtday.split('-').join('.')}
+          birthday:
+          {typeof birthday === 'string' && birthday.split('-').join('.')}
         </span>
         <span>Country: {country}</span>
         <span>Gender: {gender}</span>
