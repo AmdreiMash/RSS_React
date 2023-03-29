@@ -10,7 +10,7 @@ describe('ProductCard', () => {
   it('renders ProductCard', () => {
     render(
       <BrowserRouter>
-        <ProductCard data={productsData[1]} />
+        <ProductCard {...productsData[1]} />
       </BrowserRouter>
     );
     expect(screen.getByRole('link')).toHaveTextContent("men's clothing");
@@ -19,7 +19,7 @@ describe('ProductCard', () => {
   it('Shold add shadow if user hover the product card', async () => {
     const { container } = render(
       <BrowserRouter>
-        <ProductCard data={productsData[1]} />
+        <ProductCard {...productsData[1]} />
       </BrowserRouter>
     );
     const productCard = container.querySelector<HTMLDivElement>('.card-content');
@@ -36,7 +36,7 @@ describe('ProductCard', () => {
   it('Like shold work', async () => {
     const { container } = render(
       <BrowserRouter>
-        <ProductCard data={productsData[1]} />
+        <ProductCard {...productsData[1]} />
       </BrowserRouter>
     );
 

@@ -1,27 +1,12 @@
 import React, { useState } from 'react';
 import LabelFile from './Elements/LabelFile';
 import File from './Elements/File';
-import styled from 'styled-components';
-
-const Img = styled.div<{ img: string }>`
-    position: absolute;
-    content: <div><div/>
-    position: absolute;
-    left: 230px;
-    opacity: 1;
-    top: -50px;
-    width: 100px;
-    height: 100px;
-    background-image: url('${(props) => (props.img ? props.img : '')}');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-  }`;
+import frame from '../../../assets/frame.svg';
+import Img from './Elements/Img';
 
 const InputImg = (props: { status: boolean; ref: React.RefObject<HTMLInputElement> }) => {
   const { status, ref } = props;
-  const [img, setImg] = useState('');
-  const [showImg, setShowImg] = useState(false);
+  const [img, setImg] = useState(frame);
 
   return (
     <div style={{ position: 'relative' }}>
@@ -33,7 +18,7 @@ const InputImg = (props: { status: boolean; ref: React.RefObject<HTMLInputElemen
           accept="image/*"
           ref={ref}
           onChange={(e) =>
-            setImg(e.target?.files?.[0] ? URL.createObjectURL(e.target.files[0]) : '')
+            setImg(e.target?.files?.[0] ? URL.createObjectURL(e.target.files[0]) : frame)
           }
         />
       </LabelFile>

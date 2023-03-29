@@ -2,12 +2,12 @@ import React from 'react';
 import { Menu } from 'antd';
 import type { MenuProps } from 'antd';
 import { FormOutlined, HomeOutlined, InfoCircleOutlined } from '@ant-design/icons';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
-class Header extends React.Component {
-  state = { current: location.pathname };
+const Header = () => {
+  const current = useLocation().pathname;
 
-  navItems: MenuProps['items'] = [
+  const navItems: MenuProps['items'] = [
     {
       label: <Link to={'/'}>Home</Link>,
       key: '/',
@@ -25,16 +25,11 @@ class Header extends React.Component {
     },
   ];
 
-  componentDidMount() {
-    this.setState({ current: location.pathname });
-  }
-  render() {
-    return (
-      <header>
-        <Menu mode="horizontal" selectedKeys={[this.state.current]} items={this.navItems} />
-      </header>
-    );
-  }
-}
+  return (
+    <header>
+      <Menu mode="horizontal" selectedKeys={[current]} items={navItems} />
+    </header>
+  );
+};
 
 export default Header;

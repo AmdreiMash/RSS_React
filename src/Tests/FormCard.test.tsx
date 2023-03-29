@@ -17,7 +17,7 @@ describe('FormCard', () => {
   it('renders FormCard', () => {
     render(
       <BrowserRouter>
-        <FormCard data={data} />
+        <FormCard {...data} />
       </BrowserRouter>
     );
     expect(screen.getByText(/Belarus/i)).toBeInTheDocument;
