@@ -5,10 +5,11 @@ import SearchBar from '../components/SerchBar';
 import style from './styles';
 import Products from '../../assets/products';
 import ProductCard from '../components/ProductCard';
+import Wrapper from '../components/Elements/PageWrapper';
 
 const HomePage = () => {
   return (
-    <>
+    <Wrapper>
       <Header />
       <Content style={style.main}>
         <div style={style.mainHeading}>
@@ -21,7 +22,7 @@ const HomePage = () => {
           ))}
         </div>
       </Content>
-    </>
+    </Wrapper>
   );
 };
 

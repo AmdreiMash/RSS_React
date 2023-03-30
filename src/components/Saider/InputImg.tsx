@@ -3,9 +3,14 @@ import LabelFile from './Elements/LabelFile';
 import File from './Elements/File';
 import frame from '../../../assets/frame.svg';
 import Img from './Elements/Img';
+import { FieldError, UseFormRegister } from 'react-hook-form/dist/types';
+import { CardData } from 'Types/Types';
 
-const InputImg = (props: { status: boolean; ref: React.RefObject<HTMLInputElement> }) => {
-  const { status, ref } = props;
+const InputImg = (props: {
+  status: FieldError | undefined;
+  register: UseFormRegister<CardData>;
+}) => {
+  const { status, register } = props;
   const [img, setImg] = useState(frame);
 
   return (
@@ -14,9 +19,8 @@ const InputImg = (props: { status: boolean; ref: React.RefObject<HTMLInputElemen
         Add Foto
         <File
           type="file"
-          name="img"
+          {...register('file', { required: true })}
           accept="image/*"
-          ref={ref}
           onChange={(e) =>
             setImg(e.target?.files?.[0] ? URL.createObjectURL(e.target.files[0]) : frame)
           }

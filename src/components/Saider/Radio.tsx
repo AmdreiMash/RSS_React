@@ -1,18 +1,19 @@
 import styled from '../styled';
 import React from 'react';
-import { RadioProps } from '../../Types/Types';
+import { CardData } from '../../Types/Types';
+import { UseFormRegister } from 'react-hook-form/dist/types';
 
-const Radio = (props: RadioProps) => {
-  const { female, male } = props;
+const Radio = (props: { register: UseFormRegister<CardData> }) => {
+  const { register } = props;
   return (
     <div style={styled.label}>
       <label style={styled.label}>
         female
-        <input type="radio" name="gender" value="female" ref={female} />
+        <input type="radio" {...register('gender', { required: true })} value="female" />
       </label>
       <label style={styled.label}>
         male
-        <input type="radio" name="gender" value="male" ref={male} />
+        <input type="radio" {...register('gender', { required: true })} value="male" />
       </label>
     </div>
   );

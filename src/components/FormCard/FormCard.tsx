@@ -6,7 +6,7 @@ const FormCard = (data: CardData) => {
   const { name, email, country, policy, birthday, gender, file } = data;
   return (
     <CardWrapper>
-      <img src={file} alt="img" style={{ maxHeight: '295px' }} />
+      <img src={URL.createObjectURL(file[0])} alt="img" style={{ maxHeight: '295px' }} />
       <div style={{ display: 'flex', flexDirection: 'column' }}>
         <span>Name: {name}</span>
         <span>Email: {email}</span>

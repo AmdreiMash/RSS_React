@@ -1,24 +1,18 @@
 import styled from '../styled';
 import React from 'react';
 import { UseFormRegister } from 'react-hook-form/dist/types';
+import { CardData } from '../../Types/Types';
 
-const Select = (props: {
-  register: UseFormRegister<{
-    name: string;
-    email: string;
-    birthday: string;
-    country: string;
-    gender: string;
-    policy: boolean;
-    male: boolean;
-    female: boolean;
-    file: string;
-  }>;
-}) => {
+const Select = (props: { register: UseFormRegister<CardData> }) => {
   const { register } = props;
   return (
-    <select {...register('country', { required: true })} style={styled.label} placeholder="Country">
-      <option value="" disabled selected>
+    <select
+      {...register('country', { required: true })}
+      defaultValue=""
+      style={styled.label}
+      placeholder="Country"
+    >
+      <option value="" disabled>
         Select your country
       </option>
       <option value="Belarus">Belarus</option>

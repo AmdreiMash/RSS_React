@@ -1,4 +1,4 @@
-import { FormValue, CardData } from './Types';
+import { CardData } from './Types';
 
 export interface IProduct {
   id: number;
@@ -21,9 +21,5 @@ export interface FormCardsProps {
 export interface SaiderProps {
   showForm: boolean;
   showFormHandler: () => void;
-  addNewCard: (data: FormValue) => void;
-}
-
-export interface FormState {
-  [key: string]: boolean;
+  addNewCard: (data: CardData) => void;
 }

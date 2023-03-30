@@ -4,7 +4,7 @@ import Wrapper from '../components/Elements/PageWrapper';
 import Saider from '../components/Saider/Saider';
 import FormPageWrapper from '../components/Elements/FormPageWrapper';
 import FormCards from '../components/FormCard/FormCards';
-import { FormValue, CardData } from '../Types/Types';
+import { CardData } from '../Types/Types';
 import Message from '../components/Saider/Elements/SubmitMessage';
 
 const FormPage = () => {
@@ -16,7 +16,7 @@ const FormPage = () => {
     showFormTogglet(!showForm);
   };
 
-  const addNewCard = (data: FormValue) => {
+  const addNewCard = (data: CardData) => {
     setCards([...cards, data as CardData]);
     showMessageTogglet(true);
     setTimeout(() => {
@@ -37,5 +37,3 @@ const FormPage = () => {
 };
 
 export default FormPage;
-
-// add login form component
