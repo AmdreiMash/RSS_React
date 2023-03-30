@@ -12,7 +12,6 @@ import Radio from './Radio';
 import SubmitButton from './SubmitButton';
 import getValue from '../../utils/getValue';
 import getFile from '../../utils/getFile';
-import nameValidation from '../../utils/nameVlaidation';
 import emailValidation from '../../utils/emailValidarion';
 import { FormValue } from '../../Types/Types';
 import birthdayValidation from '../../utils/birthdayValidation';
@@ -33,7 +32,7 @@ const Form = (props: { addNewCard(data: FormValue): void }) => {
       name: '',
       email: '',
       birthday: '',
-      country: 'Country',
+      country: '',
       gender: '',
       policy: false,
       male: false,
@@ -96,29 +95,39 @@ const Form = (props: { addNewCard(data: FormValue): void }) => {
 
   return (
     <FormWrapper onSubmit={handleSubmit((data) => console.log(data))}>
-      <Label status={errors.name} message={errorMessage.name} bottom="-30px">
+      <Label status={errors.name} message={errorMessage.name} bottom="-25px">
         Name
         <Input
-          status={true}
+          status={errors.name}
           {...register('name', {
             required: true,
             maxLength: 30,
-            pattern: /^[A-ZА-Я][a-zа-я]+/,
+            pattern: /^[A-ZА-ЯЁ][a-zа-яё]+$/,
           })}
         />
       </Label>
-      <Label status={erroe.email} message={errorMessage.email} bottom={'-25px'}>
+      <Label status={errors.email} message={errorMessage.email} bottom={'-25px'}>
         Email
-        <Input ref={this.email} name="email" status={this.state.email} />
+        <Input
+          status={errors.email}
+          {...register('email', {
+            required: true,
+            maxLength: 30,
+            pattern: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
+          })}
+        />
       </Label>
-      {/*<Label status={this.state.birthday} message={errorMessage.birthday}>
+      <Label status={errors.birthday} message={errorMessage.birthday}>
         Birthday
-        <input name="birthday" type="date" ref={this.birthday} />
-      </Label>*/}
-      {/*<Label status={this.state.country} message={errorMessage.country}>
+        <input
+          {...register('birthday', { required: true, max: '2014-12-31', min: '1940-01-01' })}
+          type="date"
+        />
+      </Label>
+      <Label status={errors.country} message={errorMessage.country}>
         Сountry
-        <Select link={this.country} />
-      </Label>*/}
+        <Select register={register} />
+      </Label>
       {/*<Label status={this.state.gender} message={errorMessage.gender}>
         Gender:
         <Radio male={this.male} female={this.female} />
