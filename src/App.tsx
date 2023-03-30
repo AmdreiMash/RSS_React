@@ -4,16 +4,14 @@ import Home from './pages/Home';
 import About from './pages/About';
 import NotFound from './pages/NotFound';
 import FormPage from './pages/FormPage';
-class App extends React.Component {
-  render() {
-    return (
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/About" element={<About />} />
-        <Route path="/Form" element={<FormPage />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-    );
-  }
-}
+const App = () => {
+  return (
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/About" element={<About />} />
+      <Route path="/Form" element={<FormPage />} />
+      <Route path="*" element={<NotFound />} />
+    </Routes>
+  );
+};
 export default App;
