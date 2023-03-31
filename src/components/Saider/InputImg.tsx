@@ -14,7 +14,12 @@ const InputImg = (props: {
     <div style={{ position: 'relative' }}>
       <LabelFile message="Upload your image" status={status}>
         Add Foto
-        <File type="file" {...register('file', { required: true })} accept="image/*" />
+        <File
+          type="file"
+          {...register('file', { required: true })}
+          accept="image/*"
+          multiple={false}
+        />
       </LabelFile>
     </div>
   );
