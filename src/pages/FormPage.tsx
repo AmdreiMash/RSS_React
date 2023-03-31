@@ -17,7 +17,8 @@ const FormPage = () => {
   };
 
   const addNewCard = (data: CardData) => {
-    setCards([...cards, data as CardData]);
+    const img = URL.createObjectURL(data.file[0]);
+    setCards([...cards, { ...data, img } as CardData]);
     showMessageTogglet(true);
     setTimeout(() => {
       showMessageTogglet(false);

@@ -16,6 +16,7 @@ const Form = (props: { addNewCard(data: CardData): void }) => {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm({
     mode: 'onSubmit',
@@ -30,11 +31,12 @@ const Form = (props: { addNewCard(data: CardData): void }) => {
       file: '' as unknown as FileList,
     },
   });
-
+  console.log('render');
   return (
     <FormWrapper
       onSubmit={handleSubmit((data) => {
         addNewCard(data);
+        reset({}, { keepDefaultValues: true });
       })}
     >
       <Label status={errors.name} message={errorMessage.name} bottom="-25px">

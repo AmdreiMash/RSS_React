@@ -3,10 +3,10 @@ import { CardData } from 'Types/Types';
 import CardWrapper from './Elements/CardWrapper';
 
 const FormCard = (data: CardData) => {
-  const { name, email, country, policy, birthday, gender, file } = data;
+  const { name, email, country, policy, birthday, gender, img } = data;
   return (
     <CardWrapper>
-      <img src={URL.createObjectURL(file[0])} alt="img" style={{ maxHeight: '295px' }} />
+      <img src={img} alt="img" style={{ maxHeight: '295px' }} />
       <div style={{ display: 'flex', flexDirection: 'column' }}>
         <span>Name: {name}</span>
         <span>Email: {email}</span>

@@ -1,5 +1,5 @@
 export type CardData = {
-  [key: string]: string | boolean | FileList;
+  [key: string]: string | boolean | FileList | undefined;
   name: string;
   email: string;
   birthday: string;
@@ -7,4 +7,5 @@ export type CardData = {
   file: FileList;
   policy: boolean;
   gender: string;
+  img?: string;
 };
