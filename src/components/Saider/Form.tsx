@@ -31,7 +31,6 @@ const Form = (props: { addNewCard(data: CardData): void }) => {
       file: '' as unknown as FileList,
     },
   });
-  console.log('render');
   return (
     <FormWrapper
       onSubmit={handleSubmit((data) => {
