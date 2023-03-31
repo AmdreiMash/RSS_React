@@ -35,7 +35,6 @@ const Form = (props: { addNewCard(data: CardData): void }) => {
     <FormWrapper
       onSubmit={handleSubmit((data) => {
         addNewCard(data);
-        console.log(data);
       })}
     >
       <Label status={errors.name} message={errorMessage.name} bottom="-25px">
