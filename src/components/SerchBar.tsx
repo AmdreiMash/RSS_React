@@ -14,7 +14,7 @@ const SearchBar = () => {
 
   useEffect(() => {
     return () => {
-      localStorage.setItem('Seach Value', value);
+      localStorage.setItem('Seach Value', valueRef.current);
     };
   }, []);
 
