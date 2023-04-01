@@ -18,7 +18,7 @@ const Select = (props: { register: UseFormRegister<CardData> }) => {
       <option value="Belarus">Belarus</option>
       <option value="Russia">Russia</option>
       <option value="Ukraine">Ukraine</option>
-      <option value="Polna">Polna</option>
+      <option value="Poland">Poland</option>
       <option value="other">other</option>
     </select>
   );
