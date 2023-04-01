@@ -3,9 +3,9 @@ import Header from '../components/Header';
 import Content from 'antd/es/layout/layout';
 import SearchBar from '../components/SerchBar';
 import style from './styles';
-import Products from '../../assets/products';
-import ProductCard from '../components/ProductCard';
 import Wrapper from '../components/Elements/PageWrapper';
+import ProductCard from '../components/ProductCard';
+import Products from '../../assets/products';
 
 const HomePage = () => {
   return (

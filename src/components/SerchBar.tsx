@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Input } from 'antd';
 import styled from './styled';
 
@@ -6,11 +6,17 @@ const SearchBar = () => {
   const { Search } = Input;
   const [value, setValue] = useState(localStorage.getItem('Seach Value') || '');
 
+  const valueRef = useRef('');
+
+  useEffect(() => {
+    valueRef.current = value;
+  }, [value]);
+
   useEffect(() => {
     return () => {
       localStorage.setItem('Seach Value', value);
     };
-  }, [value]);
+  }, []);
 
   return (
     <Search
