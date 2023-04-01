@@ -34,7 +34,9 @@ const Form = (props: { addNewCard(data: CardData): void }) => {
   return (
     <FormWrapper
       onSubmit={handleSubmit((data) => {
+        console.log(data);
         addNewCard(data);
+
         reset({}, { keepDefaultValues: true });
       })}
     >

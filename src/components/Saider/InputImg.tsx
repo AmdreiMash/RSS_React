@@ -12,7 +12,7 @@ const InputImg = (props: {
 
   return (
     <div style={{ position: 'relative' }}>
-      <LabelFile message="Upload your image" status={status}>
+      <LabelFile message="Upload your foto" status={status}>
         Add Foto
         <File
           type="file"
