@@ -16,7 +16,10 @@ const InputImg = (props: {
         Add Foto
         <File
           type="file"
-          {...register('file', { required: true })}
+          {...register('file', {
+            required: true,
+            validate: { type: (value) => value[0] && value[0].type.startsWith('image') },
+          })}
           accept="image/*"
           multiple={false}
         />
