@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Header from '../components/Header';
 import Content from 'antd/es/layout/layout';
 import SearchBar from '../components/SerchBar';
@@ -8,6 +8,10 @@ import ProductCard from '../components/ProductCard';
 import Products from '../../assets/products';
 
 const HomePage = () => {
+  //const inputHeandler = (e: InputEvent) => {
+  //  e.target && setSerchValue(e.target.value);
+  //};
+
   return (
     <Wrapper>
       <Header />

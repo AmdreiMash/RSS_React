@@ -27,6 +27,8 @@ const SearchBar = () => {
       }}
       style={styled.searchBar}
       value={value}
+      onSearch={(value) => setValue('')}
+      loading={false} //! прокинуть значение
     />
   );
 };
