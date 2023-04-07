@@ -1,10 +1,16 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, SetStateAction, Dispatch } from 'react';
 import { Input } from 'antd';
 import styled from './styled';
 
-const SearchBar = () => {
+type SerchBarProps = {
+  getData: (value: string) => void;
+  loaded: boolean;
+};
+
+const SearchBar = (props: SerchBarProps) => {
   const { Search } = Input;
   const [value, setValue] = useState(localStorage.getItem('Seach Value') || '');
+  const { loaded, getData } = props;
 
   const valueRef = useRef('');
 
@@ -20,15 +26,16 @@ const SearchBar = () => {
 
   return (
     <Search
-      placeholder="Search..."
-      allowClear
+      placeholder="Enter a character name"
       onChange={(e) => {
         setValue(e.target.value);
       }}
       style={styled.searchBar}
       value={value}
-      onSearch={(value) => setValue('')}
-      loading={false} //! прокинуть значение
+      onSearch={(value) => {
+        getData(value);
+      }}
+      loading={loaded}
     />
   );
 };

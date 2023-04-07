@@ -13,13 +13,20 @@ const styled: { [key: string]: React.CSSProperties } = {
     paddingTop: '5px',
   },
 
-  productText: { width: '100%', marginLeft: '8px' },
+  productText: {
+    width: '80%',
+    marginLeft: '8px',
+    whiteSpace: 'nowrap',
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
+  },
+
   SearchBar: { flex: '1', alignSelf: 'center' },
+
   productName: {
     marginLeft: '8px',
     fontSize: '1.5em',
     fontWeight: 'bold',
-    textOverflow: 'ellipsis',
     maxHeight: '1.3em',
     maxWidth: '100%',
     whiteSpace: 'nowrap',
@@ -34,7 +41,7 @@ const styled: { [key: string]: React.CSSProperties } = {
 
   like: {
     position: 'absolute',
-    bottom: '5px',
+    bottom: '15px',
     right: '15px',
     width: '25px',
     height: '25px',
