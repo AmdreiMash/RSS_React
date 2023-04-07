@@ -1,7 +1,6 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { it } from 'vitest';
-import productsData from '../../assets/products';
 import CharacterCard from '../components/CharacterCard';
 import { BrowserRouter } from 'react-router-dom';
 import userEvent from '@testing-library/user-event';
@@ -109,7 +108,7 @@ describe('CharacterCard', () => {
   //});
 
   it('Like shold work', async () => {
-    const { container } = render(
+    render(
       <BrowserRouter>
         <CharacterCard {...Data} />
       </BrowserRouter>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, SetStateAction, Dispatch } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Input } from 'antd';
 import styled from './styled';
 

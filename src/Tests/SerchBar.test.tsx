@@ -18,7 +18,7 @@ describe('Search bar', () => {
 
     expect(localStorage.getItem('Seach Value')).toBe(testValue);
 
-    render(<SearchBar getData={(value) => 1 + 1} loaded={false} />);
+    render(<SearchBar getData={(value) => value + 1} loaded={false} />);
 
     input = screen.getByPlaceholderText('Enter a character name');
 
