@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Image } from 'antd';
 import style, { ProductWrapper } from './styled';
 import { ReactComponent as Like } from '../../assets/like.svg';
 import { Character } from '../Types/Types';
@@ -7,9 +6,7 @@ import { Character } from '../Types/Types';
 const ProductCard = (props: Character) => {
   const [liked, srtLike] = useState(false);
   const [hover, setHover] = useState(false);
-  const rateColor = ['black', 'red', '#E35049', '#E5D751', '#74F272', '#00F509'];
   const { image, name, status, species, type, gender, origin, location, episode, created } = props;
-  const boxShadow = hover ? { boxShadow: '2px 10px 8px 0px rgba(34, 60, 80, 0.2)' } : {};
 
   const likeHandler = () => srtLike(!liked);
   const hoverHandler = () => {
@@ -22,7 +19,7 @@ const ProductCard = (props: Character) => {
       onMouseEnter={hoverHandler}
       onMouseLeave={hoverHandler}
     >
-      <Image src={image} width={'90%'} height={'90%'} />
+      <img src={image} width={'90%'} height={'90%'} />
 
       <div style={style.productInfo}>
         <div style={style.productName}>{name}</div>
