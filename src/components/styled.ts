@@ -1,45 +1,7 @@
 import styled from 'styled-components';
 
 const style: { [key: string]: React.CSSProperties } = {
-  productWrapper: {
-    width: '300px',
-    height: '350px',
-    backgroundRepeat: 'no-repeat',
-    backgroundPosition: 'center',
-    backgroundSize: 'contain',
-    border: '1px solid  rgba(0, 0, 0, 0.09)',
-    borderRadius: '5px',
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    paddingTop: '5px',
-  },
-
-  productText: {
-    width: '80%',
-    marginLeft: '8px',
-    whiteSpace: 'nowrap',
-    overflow: 'hidden',
-    textOverflow: 'ellipsis',
-  },
-
   SearchBar: { flex: '1', alignSelf: 'center' },
-
-  productName: {
-    marginLeft: '8px',
-    fontSize: '1.5em',
-    fontWeight: 'bold',
-    maxHeight: '1.3em',
-    maxWidth: '100%',
-    whiteSpace: 'nowrap',
-    overflow: 'hidden',
-  },
-
-  productInfo: {
-    width: '100%',
-    position: 'relative',
-    paddingBottom: '10px',
-  },
 
   like: {
     position: 'absolute',
@@ -49,8 +11,6 @@ const style: { [key: string]: React.CSSProperties } = {
     height: '25px',
     backgroundSize: 'cover',
   },
-
-  label: { display: 'flex', gap: '10px' },
 };
 
 export const ProductWrapper = styled.div`
@@ -67,4 +27,30 @@ export const ProductWrapper = styled.div`
     box-shadow: 2px 10px 8px 0px rgba(34, 60, 80, 0.2);
   }
 `;
+
+export const Text = styled.div`
+    width: 80%;
+    margin-left: 8px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  },
+`;
+
+export const Name = styled.div`
+  margin-left: 8px;
+  font-size: 1.5em;
+  font-weight: bold;
+  max-height: 1.3em;
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+`;
+
+export const Info = styled.div`
+  width: 100%;
+  position: relative;
+  padding-bottom: 10px;
+`;
+
 export default style;

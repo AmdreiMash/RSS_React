@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import style, { ProductWrapper } from './styled';
+import style, { ProductWrapper, Text, Name, Info } from './styled';
 import { ReactComponent as Like } from '../../assets/like.svg';
 import { Character } from '../Types/Types';
 
@@ -17,29 +17,22 @@ const ProductCard = (props: Character) => {
     <ProductWrapper role="card" onMouseEnter={hoverHandler} onMouseLeave={hoverHandler}>
       <img src={image} width={'90%'} height={'90%'} />
 
-      <div style={style.productInfo}>
-        <div role="row" style={style.productName}>
+      <Info style={style.productInfo}>
+        <Name role="row" style={style.productName}>
           {name}
-        </div>
-        <div role="row" style={style.productText}>
-          Status: {status}
-        </div>
-        <div role="row" style={style.productText}>
-          Home planet: {origin.name}
-        </div>
-        <div role="row" style={style.productText}>
-          Created: {created.split('T')[0]}
-        </div>
+        </Name>
+        <Text role="row">Status: {status}</Text>
+        <Text role="row">Home planet: {origin.name}</Text>
+        <Text role="row">Created: {created.split('T')[0]}</Text>
         <Like
           role="button"
-          className="like"
           style={style.like}
           fill={liked ? '#FF7979' : '#808080'}
           height={25}
           width={25}
           onClick={likeHandler}
         />
-      </div>
+      </Info>
     </ProductWrapper>
   );
 };
