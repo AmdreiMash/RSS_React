@@ -1,12 +1,18 @@
 import styled from 'styled-components';
-//const style: { [key: string]: React.CSSProperties } =
 
 export const ProductContainer = styled.div`
   display: flex;
   gap: 20px;
   width: 90%;
   flex-wrap: wrap;
-  justify-content: center;
+  //justify-content: center;
+  @media (max-width: 1050px) {
+    width: 650px;
+  }
+
+  @media (max-width: 670px) {
+    width: 330px;
+  }
 `;
 
 export const Main = styled.main`
@@ -31,7 +37,3 @@ export const NotFoundWrapper = styled.div`
   align-items: flex-end;
   justify-content: center;
 `;
-
-//};
-
-//export default style;

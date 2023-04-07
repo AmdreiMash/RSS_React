@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import upload from '../../../../assets/upload.svg';
 import Label from './Lable';
+
 const LabelFile = styled(Label)`
   position: relative;
   opacity: 0.7;

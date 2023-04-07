@@ -1,4 +1,6 @@
-const styled: { [key: string]: React.CSSProperties } = {
+import styled from 'styled-components';
+
+const style: { [key: string]: React.CSSProperties } = {
   productWrapper: {
     width: '300px',
     height: '350px',
@@ -51,4 +53,18 @@ const styled: { [key: string]: React.CSSProperties } = {
   label: { display: 'flex', gap: '10px' },
 };
 
-export default styled;
+export const ProductWrapper = styled.div`
+  width: 300px;
+  height: 350px;
+  border: 1px solid rgba(0, 0, 0, 0.09);
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 0;
+  flex-direction: column;
+  &:hover {
+    box-shadow: 2px 10px 8px 0px rgba(34, 60, 80, 0.2);
+  }
+`;
+export default style;

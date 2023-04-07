@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Image } from 'antd';
-import styled from './styled';
+import style, { ProductWrapper } from './styled';
 import { ReactComponent as Like } from '../../assets/like.svg';
 import { Character } from '../Types/Types';
 
@@ -17,33 +17,28 @@ const ProductCard = (props: Character) => {
   };
 
   return (
-    <div
+    <ProductWrapper
       className="card-content"
-      style={{
-        ...styled.productWrapper,
-        flexDirection: 'column',
-        ...boxShadow,
-      }}
       onMouseEnter={hoverHandler}
       onMouseLeave={hoverHandler}
     >
       <Image src={image} width={'90%'} height={'90%'} />
 
-      <div style={styled.productInfo}>
-        <div style={styled.productName}>{name}</div>
-        <div style={styled.productText}>Status: {status}</div>
-        <div style={styled.productText}>Home planet: {origin.name}</div>
-        <div style={styled.productText}>Created: {created.split('T')[0]}</div>
+      <div style={style.productInfo}>
+        <div style={style.productName}>{name}</div>
+        <div style={style.productText}>Status: {status}</div>
+        <div style={style.productText}>Home planet: {origin.name}</div>
+        <div style={style.productText}>Created: {created.split('T')[0]}</div>
         <Like
           className="like"
-          style={styled.like}
+          style={style.like}
           fill={liked ? '#FF7979' : '#808080'}
           height={25}
           width={25}
           onClick={likeHandler}
         />
       </div>
-    </div>
+    </ProductWrapper>
   );
 };
 
