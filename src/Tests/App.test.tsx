@@ -14,10 +14,9 @@ describe('App', () => {
     );
     const link = screen.getByText('About');
 
-    expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent('Home');
+    expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent(/Home/i);
 
     await userEvent.click(link);
-
-    expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent('About Us');
+    expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent(/About Us/i);
   });
 });

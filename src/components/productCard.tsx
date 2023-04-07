@@ -14,19 +14,24 @@ const ProductCard = (props: Character) => {
   };
 
   return (
-    <ProductWrapper
-      className="card-content"
-      onMouseEnter={hoverHandler}
-      onMouseLeave={hoverHandler}
-    >
+    <ProductWrapper role="card" onMouseEnter={hoverHandler} onMouseLeave={hoverHandler}>
       <img src={image} width={'90%'} height={'90%'} />
 
       <div style={style.productInfo}>
-        <div style={style.productName}>{name}</div>
-        <div style={style.productText}>Status: {status}</div>
-        <div style={style.productText}>Home planet: {origin.name}</div>
-        <div style={style.productText}>Created: {created.split('T')[0]}</div>
+        <div role="row" style={style.productName}>
+          {name}
+        </div>
+        <div role="row" style={style.productText}>
+          Status: {status}
+        </div>
+        <div role="row" style={style.productText}>
+          Home planet: {origin.name}
+        </div>
+        <div role="row" style={style.productText}>
+          Created: {created.split('T')[0]}
+        </div>
         <Like
+          role="button"
           className="like"
           style={style.like}
           fill={liked ? '#FF7979' : '#808080'}
