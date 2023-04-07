@@ -3,7 +3,7 @@ import style, { ProductWrapper, Text, Name, Info } from './styled';
 import { ReactComponent as Like } from '../../assets/like.svg';
 import { Character } from '../Types/Types';
 
-const ProductCard = (props: Character) => {
+const CharacterCard = (props: Character) => {
   const [liked, srtLike] = useState(false);
   const [hover, setHover] = useState(false);
   const { image, name, status, species, type, gender, origin, location, episode, created } = props;
@@ -37,4 +37,4 @@ const ProductCard = (props: Character) => {
   );
 };
 
-export default ProductCard;
+export default CharacterCard;

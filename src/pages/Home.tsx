@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react';
 import Header from '../components/Header';
 import Content from 'antd/es/layout/layout';
 import SearchBar from '../components/SerchBar';
-import { Main, ProductContainer, MainHeading } from './styles';
+import { Main, Container, MainHeading } from './styles';
 import Wrapper from '../components/Elements/PageWrapper';
-import ProductCard from '../components/ProductCard';
+import CharacterCard from '../components/CharacterCard';
 import axios, { AxiosError } from 'axios';
 import { ResponseData } from '../Types/Types';
 
@@ -47,11 +47,11 @@ const HomePage = () => {
           <p>{error}</p>
         ) : (
           data && (
-            <ProductContainer>
+            <Container>
               {data.results.map((e) => (
-                <ProductCard key={e.id} {...e} />
+                <CharacterCard key={e.id} {...e} />
               ))}
-            </ProductContainer>
+            </Container>
           )
         )}
       </Main>

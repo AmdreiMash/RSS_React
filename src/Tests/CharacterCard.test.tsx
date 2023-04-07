@@ -2,7 +2,7 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { it } from 'vitest';
 import productsData from '../../assets/products';
-import ProductCard from '../components/ProductCard';
+import CharacterCard from '../components/CharacterCard';
 import { BrowserRouter } from 'react-router-dom';
 import userEvent from '@testing-library/user-event';
 
@@ -79,11 +79,11 @@ const Data = JSON.parse(`{
             "created": "2017-11-04T18:48:46.250Z"
 }`);
 
-describe('ProductCard', () => {
-  it('renders ProductCard', () => {
+describe('CharacterCard', () => {
+  it('renders CharacterCard', () => {
     render(
       <BrowserRouter>
-        <ProductCard {...Data} />
+        <CharacterCard {...Data} />
       </BrowserRouter>
     );
     expect(screen.getByText(/Rick Sanchez/i));
@@ -92,26 +92,26 @@ describe('ProductCard', () => {
   //it('Shold add shadow if user hover the product card', async () => {
   //  const { container } = render(
   //    <BrowserRouter>
-  //      <ProductCard {...Data} />
+  //      <CharacterCard {...Data} />
   //    </BrowserRouter>
   //  );
-  //  const productCard = screen.getByRole('card');
+  //  const CharacterCard = screen.getByRole('card');
 
-  //  if (!productCard) return console.error('ProductCard not found');
+  //  if (!CharacterCard) return console.error('CharacterCard not found');
 
-  //  expect(productCard.style.boxShadow).toBe('');
+  //  expect(CharacterCard.style.boxShadow).toBe('');
 
-  //  await userEvent.hover(productCard);
+  //  await userEvent.hover(CharacterCard);
 
-  //  console.log(productCard.style);
+  //  console.log(CharacterCard.style);
 
-  //  expect(productCard.style.boxShadow).toBe('2px 10px 8px 0px rgba(34, 60, 80, 0.2)');
+  //  expect(CharacterCard.style.boxShadow).toBe('2px 10px 8px 0px rgba(34, 60, 80, 0.2)');
   //});
 
   it('Like shold work', async () => {
     const { container } = render(
       <BrowserRouter>
-        <ProductCard {...Data} />
+        <CharacterCard {...Data} />
       </BrowserRouter>
     );
 
