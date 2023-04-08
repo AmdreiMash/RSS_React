@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import style, { ProductWrapper, Text, Name, Info } from './styled';
+import style, { ProductWrapper, Text, Name, Info, Overlay } from './styled';
 import { ReactComponent as Like } from '../../assets/like.svg';
 import { Character } from '../Types/Types';
 
@@ -15,48 +15,53 @@ const CharacterCard = (props: Character) => {
     const target = e.target as typeof e.target & {
       tagName: string;
     };
-    target.tagName !== 'svg' && target.tagName !== 'path' && setShow(!show);
+    target.tagName !== 'svg' && target.tagName !== 'path' && setShow(true);
   };
 
   return (
-    <ProductWrapper onClick={(e) => showModal(e)} role="card" show={show}>
-      <img src={image} width={'270px'} height={'320px'} />
-      <Info style={style.productInfo}>
-        <Name role="row" style={style.productName}>
-          {name}
-        </Name>
-        <Text role="row">Status: {status}</Text>
-        <Text role="row">Home planet: {origin.name}</Text>
-        <Text role="row">Created: {created.split('T')[0]}</Text>
+    <>
+      <Overlay show={show} onClick={() => setShow(false)}></Overlay>
+      <ProductWrapper onClick={(e) => showModal(e)} role="card" show={show}>
+        <img src={image} width={'270px'} height={'320px'} />
+        <Info style={style.productInfo}>
+          <Name role="row" style={style.productName}>
+            {name}
+          </Name>
+          <Text role="row">Status: {status}</Text>
+          <Text role="row">Home planet: {origin.name}</Text>
+          <Text role="row">Created: {created.split('T')[0]}</Text>
 
-        {show && (
-          <>
-            <Text role="row">Species: {species}</Text>
-            <Text role="row">Type: {type}</Text>
-            <Text role="row">Gender: {gender}</Text>
-            <Text role="row">
-              Location: <a href="#">{location.name}</a>
-            </Text>
-            <Text role="row">
-              <p>
-                Episode:{' '}
-                {episode.map((e, i, arr) => `${e.match(/\d+$/)}${i < arr.length - 1 ? ',' : '.'} `)}
-              </p>
-            </Text>
-            <Text role="row">ID: {id}</Text>
-          </>
-        )}
+          {show && (
+            <>
+              <Text role="row">Species: {species}</Text>
+              <Text role="row">Type: {type}</Text>
+              <Text role="row">Gender: {gender}</Text>
+              <Text role="row">
+                Location: <a href="#">{location.name}</a>
+              </Text>
+              <Text role="row">
+                <p>
+                  Episode:{' '}
+                  {episode.map(
+                    (e, i, arr) => `${e.match(/\d+$/)}${i < arr.length - 1 ? ',' : '.'} `
+                  )}
+                </p>
+              </Text>
+              <Text role="row">ID: {id}</Text>
+            </>
+          )}
 
-        <Like
-          role="button"
-          style={style.like}
-          fill={liked ? '#FF7979' : '#808080'}
-          height={25}
-          width={25}
-          onClick={likeHandler}
-        />
-      </Info>
-    </ProductWrapper>
+          <Like
+            role="button"
+            style={style.like}
+            fill={liked ? '#FF7979' : '#808080'}
+            height={25}
+            width={25}
+            onClick={likeHandler}
+          />
+        </Info>
+      </ProductWrapper>
+    </>
   );
 };
 

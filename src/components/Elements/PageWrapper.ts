@@ -7,6 +7,7 @@ const Wrapper = styled.div({
   flexDirection: 'column',
   boxSizing: 'border-box',
   paddingBottom: '100px',
+  position: 'relative',
 });
 
 export default Wrapper;

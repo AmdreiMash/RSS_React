@@ -85,4 +85,15 @@ export const Info = styled.div`
   padding-bottom: 10px;
 `;
 
+export const Overlay = styled.div<{ show: boolean }>`
+  width: ${(props) => (props.show ? '100vw' : '0')};
+  height: ${(props) => (props.show ? '100vh' : '0')};
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  background-color: ${(props) => (props.show ? 'rgba(0, 0, 0, 0.9)' : 'rgba(0, 0, 0, 0.01)')};
+  transition: background-color 0.3s ease-in-out;
+`;
+
 export default style;
