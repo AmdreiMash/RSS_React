@@ -6,6 +6,7 @@ const Wrapper = styled.div({
   display: 'flex',
   flexDirection: 'column',
   boxSizing: 'border-box',
+  paddingBottom: '100px',
 });
 
 export default Wrapper;

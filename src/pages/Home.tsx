@@ -6,6 +6,7 @@ import Wrapper from '../components/Elements/PageWrapper';
 import CharacterCard from '../components/CharacterCard';
 import axios from 'axios';
 import { ResponseData } from '../Types/Types';
+import errorMessage from '../ErrorMessages';
 
 const HomePage = () => {
   const [data, setData] = useState<ResponseData>();
@@ -23,7 +24,7 @@ const HomePage = () => {
         .catch((error) => setError(error.message))
         .finally(() => setLoaded(false));
     } else {
-      setError('You can enter something');
+      setError(errorMessage.characters);
       setData(null as unknown as ResponseData);
     }
   };
@@ -38,11 +39,11 @@ const HomePage = () => {
       <Main>
         <MainHeading>
           <h1>Home</h1>
-          <SearchBar getData={getData} loaded={loaded} />
+          <SearchBar {...{ getData, error, loaded }} />
         </MainHeading>
         {loaded ? (
           <p>Загрузка</p>
-        ) : error !== '' ? (
+        ) : error !== '' && error !== errorMessage.characters ? (
           <p>{error}</p>
         ) : (
           data && (

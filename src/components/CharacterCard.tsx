@@ -5,17 +5,22 @@ import { Character } from '../Types/Types';
 
 const CharacterCard = (props: Character) => {
   const [liked, srtLike] = useState(false);
-  const [hover, setHover] = useState(false);
-  const { image, name, status, species, type, gender, origin, location, episode, created } = props;
+  const [show, setShow] = useState(false);
+  const { image, name, status, species, type, gender, origin, location, episode, created, id } =
+    props;
 
   const likeHandler = () => srtLike(!liked);
-  const hoverHandler = () => {
-    setHover(!hover);
+
+  const showModal = (e: React.SyntheticEvent<HTMLDivElement, MouseEvent>) => {
+    const target = e.target as typeof e.target & {
+      tagName: string;
+    };
+    target.tagName !== 'svg' && target.tagName !== 'path' && setShow(!show);
   };
 
   return (
-    <ProductWrapper role="card" onMouseEnter={hoverHandler} onMouseLeave={hoverHandler}>
-      <img src={image} width={'90%'} height={'90%'} />
+    <ProductWrapper onClick={(e) => showModal(e)} role="card" show={show}>
+      <img src={image} width={'270px'} height={'320px'} />
 
       <Info style={style.productInfo}>
         <Name role="row" style={style.productName}>
@@ -24,6 +29,25 @@ const CharacterCard = (props: Character) => {
         <Text role="row">Status: {status}</Text>
         <Text role="row">Home planet: {origin.name}</Text>
         <Text role="row">Created: {created.split('T')[0]}</Text>
+
+        {show && (
+          <>
+            <Text role="row">Species: {species}</Text>
+            <Text role="row">Type: {type}</Text>
+            <Text role="row">Gender: {gender}</Text>
+            <Text role="row">
+              Location: <a href="#">{location.name}</a>
+            </Text>
+            <Text role="row">
+              <p>
+                Episode:{' '}
+                {episode.map((e, i, arr) => `${e.match(/\d+$/)}${i < arr.length - 1 ? ',' : '.'} `)}
+              </p>
+            </Text>
+            <Text role="row">ID: {id}</Text>
+          </>
+        )}
+
         <Like
           role="button"
           style={style.like}
