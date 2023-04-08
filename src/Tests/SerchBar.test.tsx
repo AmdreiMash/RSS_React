@@ -7,7 +7,7 @@ import SearchBar from '../components/SerchBar';
 describe('Search bar', () => {
   it('Shold save value in local storge', async () => {
     const { unmount } = render(
-      <SearchBar getData={(value) => console.log(value)} loaded={false} />
+      <SearchBar error="123" getData={(value) => console.log(value)} loaded={false} />
     );
     const testValue = 'Hello Test';
 
@@ -18,7 +18,7 @@ describe('Search bar', () => {
 
     expect(localStorage.getItem('Seach Value')).toBe(testValue);
 
-    render(<SearchBar getData={(value) => value + 1} loaded={false} />);
+    render(<SearchBar error="123" getData={(value) => value + 1} loaded={false} />);
 
     input = screen.getByPlaceholderText('Enter a character name');
 

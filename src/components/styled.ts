@@ -1,4 +1,4 @@
-import styled, { css, keyframes } from 'styled-components';
+import styled from 'styled-components';
 import animation from './animations';
 
 const style: { [key: string]: React.CSSProperties } = {
@@ -35,10 +35,26 @@ export const ProductWrapper = styled.div<{ show: boolean }>`
   cursor: pointer;
   white-space: ${(props) => (props.show ? '' : 'nowrap')};
 
+  @media (max-width: 1000px) {
+    width: ${(props) => (props.show ? '530px' : '300px')};
+    left: calc(50% - 280px);
+    padding: ${(props) => (props.show ? '5px' : '5px 0')};
+    gap: ${(props) => (props.show ? '5px' : '')};
+  }
+
+  @media (max-width: 540px) {
+    width: ${(props) => (props.show ? '275px' : '300px')};
+    left: calc(50% - 140px);
+    padding: ${(props) => (props.show ? '5px' : '5px 0')};
+    gap: ${(props) => (props.show ? '5px' : '')};
+    flex-direction: column;
+    align-items: center;
+  }
+
   ${(props) => (props.show ? animation : '')};
 
   &:hover {
-    box-shadow: 2px 10px 8px 0px rgba(34, 60, 80, 0.2);
+    box-shadow: ${(props) => (props.show ? '' : '2px 10px 8px 0px rgba(34, 60, 80, 0.2)')};
     transform: ${(props) => (props.show ? '' : 'scale(1.1)')};
     transition: transform 0.3s;
   }
@@ -59,8 +75,8 @@ export const Name = styled.div`
   font-weight: bold;
   max-height: 1.3em;
   max-width: 100%;
-  white-space: nowrap;
   overflow: hidden;
+  text-overflow: ellipsis;
 `;
 
 export const Info = styled.div`

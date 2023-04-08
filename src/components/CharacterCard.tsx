@@ -21,7 +21,6 @@ const CharacterCard = (props: Character) => {
   return (
     <ProductWrapper onClick={(e) => showModal(e)} role="card" show={show}>
       <img src={image} width={'270px'} height={'320px'} />
-
       <Info style={style.productInfo}>
         <Name role="row" style={style.productName}>
           {name}
