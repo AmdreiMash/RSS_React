@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import Header from '../components/Header';
 import SearchBar from '../components/SerchBar';
-import { Main, Container, MainHeading } from './styles';
+import { Main, Container, MainHeading, NotFound } from './styles';
 import Wrapper from '../components/Elements/PageWrapper';
 import CharacterCard from '../components/CharacterCard';
 import axios from 'axios';
 import { ResponseData } from '../Types/Types';
 import errorMessage from '../ErrorMessages';
+import notFound from '../../assets/notFound.jpeg';
 
 const HomePage = () => {
   const [data, setData] = useState<ResponseData>();
@@ -21,7 +22,7 @@ const HomePage = () => {
           setData(response.data);
           setError('');
         })
-        .catch((error) => setError(error.message))
+        .catch(() => setError('Invalid request, try something else'))
         .finally(() => setLoaded(false));
     } else {
       setError(errorMessage.characters);
@@ -44,7 +45,7 @@ const HomePage = () => {
         {loaded ? (
           <p>Загрузка</p>
         ) : error !== '' && error !== errorMessage.characters ? (
-          <p>{error}</p>
+          <NotFound src={notFound} alt="Not Found" />
         ) : (
           data && (
             <Container>

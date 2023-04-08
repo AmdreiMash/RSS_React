@@ -37,3 +37,8 @@ export const NotFoundWrapper = styled.div`
   align-items: flex-end;
   justify-content: center;
 `;
+
+export const NotFound = styled.img`
+  width: 40vw;
+  min-width: 300px;
+`;

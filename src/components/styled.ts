@@ -32,7 +32,7 @@ export const ProductWrapper = styled.div<{ show: boolean }>`
   align-items: ${(props) => (props.show ? '' : 'center')};
   gap: ${(props) => (props.show ? '30px' : '')};
   padding: ${(props) => (props.show ? '20px' : '5px 0')};
-  cursor: pointer;
+  cursor: ${(props) => (props.show ? '' : 'pointer')};
   white-space: ${(props) => (props.show ? '' : 'nowrap')};
 
   @media (max-width: 1000px) {
@@ -43,10 +43,11 @@ export const ProductWrapper = styled.div<{ show: boolean }>`
   }
 
   @media (max-width: 540px) {
+    top: 20px;
     width: ${(props) => (props.show ? '275px' : '300px')};
     left: calc(50% - 140px);
     padding: ${(props) => (props.show ? '5px' : '5px 0')};
-    gap: ${(props) => (props.show ? '5px' : '')};
+    gap: ${(props) => (props.show ? '3px' : '')};
     flex-direction: column;
     align-items: center;
   }
@@ -77,12 +78,18 @@ export const Name = styled.div`
   max-width: 100%;
   overflow: hidden;
   text-overflow: ellipsis;
+  @media (max-width: 540px) {
+    font-size: 1em;
+  }
 `;
 
 export const Info = styled.div`
   width: 100%;
   position: relative;
   padding-bottom: 10px;
+  @media (max-width: 540px) {
+    font-size: 0.8em;
+  }
 `;
 
 export const Overlay = styled.div<{ show: boolean }>`
@@ -96,4 +103,18 @@ export const Overlay = styled.div<{ show: boolean }>`
   transition: background-color 0.3s ease-in-out;
 `;
 
+export const Close = styled.div<{ show: boolean }>`
+  display: ${(props) => (props.show ? 'block' : 'none')};
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  &:hover {
+    transform: scale(1.1);
+    transition: all 0.3s ease-in-out;
+  }
+  @media (max-width: 540px) {
+    top: 3px;
+    right: 3px;
+  }
+`;
 export default style;
