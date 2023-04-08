@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 import animation from './animations';
 
 const style: { [key: string]: React.CSSProperties } = {
@@ -45,7 +45,7 @@ export const ProductWrapper = styled.div<{ show: boolean }>`
   @media (max-width: 540px) {
     top: 20px;
     width: ${(props) => (props.show ? '275px' : '300px')};
-    left: calc(50% - 140px);
+    left: calc(50% - 150px);
     padding: ${(props) => (props.show ? '5px' : '5px 0')};
     gap: ${(props) => (props.show ? '3px' : '')};
     flex-direction: column;
@@ -108,6 +108,7 @@ export const Close = styled.div<{ show: boolean }>`
   position: absolute;
   top: 10px;
   right: 10px;
+  z-index: 3;
   &:hover {
     transform: scale(1.1);
     transition: all 0.3s ease-in-out;
@@ -115,6 +116,12 @@ export const Close = styled.div<{ show: boolean }>`
   @media (max-width: 540px) {
     top: 3px;
     right: 3px;
+  }
+`;
+
+export const DisableScroll = createGlobalStyle<{ show: boolean }>` 
+  body {
+    overflow:${(props) => (props.show ? 'hidden' : '')};
   }
 `;
 export default style;

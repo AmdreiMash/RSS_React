@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import style, { ProductWrapper, Text, Name, Info, Overlay, Close } from './styled';
+import style, { ProductWrapper, Text, Name, Info, Overlay, Close, DisableScroll } from './styled';
 import { ReactComponent as Like } from '../../assets/like.svg';
 import { Character } from '../Types/Types';
 import { CloseCircleTwoTone } from '@ant-design/icons';
@@ -21,6 +21,7 @@ const CharacterCard = (props: Character) => {
 
   return (
     <>
+      <DisableScroll show={show} />
       <Overlay show={show} onClick={() => setShow(false)}></Overlay>
       <ProductWrapper onClick={(e) => showModal(e)} role="card" show={show}>
         <Close show={show} onClick={() => setShow(false)}>

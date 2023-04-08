@@ -19,7 +19,7 @@ const HomePage = () => {
 
   const getData = (value: string) => {
     setLoaded(true);
-    axios(`https://rickandmortyapi.com/api/character/?name=${value.toLowerCase()}`) // ?name=rick  ?name=${query}
+    axios(`https://rickandmortyapi.com/api/character/?name=${value.toLowerCase()}`)
       .then((response) => {
         setData(response.data);
         setError('');

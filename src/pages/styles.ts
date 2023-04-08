@@ -6,12 +6,16 @@ export const Container = styled.div`
   width: 90%;
   flex-wrap: wrap;
   //justify-content: center;
-  @media (max-width: 1050px) {
+  @media (max-width: 1050px) and (min-width: 671px) {
     width: 650px;
   }
 
   @media (max-width: 670px) {
     width: 330px;
+  }
+
+  @media (max-width: 1420px) and (min-width: 1051px) {
+    width: 1000px;
   }
 `;
 
