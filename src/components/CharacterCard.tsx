@@ -23,7 +23,7 @@ const CharacterCard = (props: Character) => {
     <>
       <DisableScroll show={show} />
       <Overlay show={show} onClick={() => setShow(false)}></Overlay>
-      <ProductWrapper onClick={(e) => showModal(e)} role="card" show={show}>
+      <ProductWrapper onClick={(e) => showModal(e)} data-testid="card" show={show}>
         <Close show={show} onClick={() => setShow(false)}>
           <CloseCircleTwoTone twoToneColor="#eb2f96" />
         </Close>

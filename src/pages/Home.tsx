@@ -10,6 +10,7 @@ import errorMessage from '../ErrorMessages';
 import notFound from '../../assets/notFound.jpeg';
 import { SyncOutlined } from '@ant-design/icons';
 import Space from 'antd/es/space';
+import getDataByParams from '../API/getDataByParams';
 
 const HomePage = () => {
   const [data, setData] = useState<ResponseData>();
@@ -17,28 +18,26 @@ const HomePage = () => {
   const [loaded, setLoaded] = useState(false);
   const [qyery, setQyery] = useState(localStorage.getItem('Seach Value') || '');
 
-  const getData = (value: string) => {
+  const getData = async (value: string) => {
     setLoaded(true);
-    axios(`https://rickandmortyapi.com/api/character/?name=${value.toLowerCase()}`)
-      .then((response) => {
-        setData(response.data);
-        setError('');
-      })
-      .catch(() => setError('Invalid request, try something else'))
-      .finally(() => setLoaded(false));
-  };
-
-  const InputHeandlet = (value: string) => {
-    setQyery(value);
+    const response = await getDataByParams([`name=${value}`]);
+    if (response) {
+      setData(response);
+      setError('');
+    } else {
+      setError('Invalid request, try something else');
+    }
+    setLoaded(false);
   };
 
   useEffect(() => {
     getData(qyery);
   }, [qyery]);
 
-  console.log(data);
-  console.log(loaded);
-  console.log(error);
+  const InputHeandlet = (value: string) => {
+    setQyery(value);
+  };
+
   return (
     <Wrapper>
       <Header />
