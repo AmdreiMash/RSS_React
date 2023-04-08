@@ -5,7 +5,7 @@ import Label from './Saider/Elements/Lable';
 import errorMessage from '../ErrorMessages';
 
 type SerchBarProps = {
-  getData: (value: string) => void;
+  InputHeandlet: (value: string) => void;
   loaded: boolean;
   error: string;
 };
@@ -13,7 +13,7 @@ type SerchBarProps = {
 const SearchBar = (props: SerchBarProps) => {
   const { Search } = Input;
   const [value, setValue] = useState(localStorage.getItem('Seach Value') || '');
-  const { loaded, getData, error } = props;
+  const { loaded, InputHeandlet, error } = props;
 
   const valueRef = useRef('');
 
@@ -42,7 +42,7 @@ const SearchBar = (props: SerchBarProps) => {
         style={styled.searchBar}
         value={value}
         onSearch={(value) => {
-          getData(value);
+          InputHeandlet(value);
         }}
         loading={loaded}
         status={error == '' ? '' : 'error'}

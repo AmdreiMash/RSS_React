@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Header from '../components/Header';
 import SearchBar from '../components/SerchBar';
 import { Main, Container, MainHeading, NotFound } from './styles';
@@ -13,22 +13,26 @@ const HomePage = () => {
   const [data, setData] = useState<ResponseData>();
   const [error, setError] = useState('');
   const [loaded, setLoaded] = useState(false);
+  const [qyery, setQyery] = useState('');
 
   const getData = (value: string) => {
-    if (value != '') {
-      setLoaded(true);
-      axios(`https://rickandmortyapi.com/api/character/?name=${value.toLowerCase()}`) // ?name=rick  ?name=${query}
-        .then((response) => {
-          setData(response.data);
-          setError('');
-        })
-        .catch(() => setError('Invalid request, try something else'))
-        .finally(() => setLoaded(false));
-    } else {
-      setError(errorMessage.characters);
-      setData(null as unknown as ResponseData);
-    }
+    setLoaded(true);
+    axios(`https://rickandmortyapi.com/api/character/?name=${value.toLowerCase()}`) // ?name=rick  ?name=${query}
+      .then((response) => {
+        setData(response.data);
+        setError('');
+      })
+      .catch(() => setError('Invalid request, try something else'))
+      .finally(() => setLoaded(false));
   };
+
+  const InputHeandlet = (value: string) => {
+    setQyery(value);
+  };
+
+  useEffect(() => {
+    getData(qyery);
+  }, [qyery]);
 
   console.log(data);
   console.log(loaded);
@@ -40,7 +44,7 @@ const HomePage = () => {
       <Main>
         <MainHeading>
           <h1>Home</h1>
-          <SearchBar {...{ getData, error, loaded }} />
+          <SearchBar {...{ InputHeandlet, error, loaded }} />
         </MainHeading>
         {loaded ? (
           <p>Загрузка</p>
