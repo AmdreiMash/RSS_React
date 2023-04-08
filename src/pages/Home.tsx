@@ -4,7 +4,6 @@ import SearchBar from '../components/SerchBar';
 import { Main, Container, MainHeading, NotFound } from './styles';
 import Wrapper from '../components/Elements/PageWrapper';
 import CharacterCard from '../components/CharacterCard';
-import axios from 'axios';
 import { ResponseData } from '../Types/Types';
 import errorMessage from '../ErrorMessages';
 import notFound from '../../assets/notFound.jpeg';
@@ -47,11 +46,11 @@ const HomePage = () => {
           <SearchBar {...{ InputHeandlet, error, loaded }} />
         </MainHeading>
         {loaded ? (
-          <Space style={{ fontSize: '20px' }}>
+          <Space style={{ fontSize: '20px' }} role="alert">
             Loding <SyncOutlined spin />
           </Space>
         ) : error !== '' && error !== errorMessage.characters ? (
-          <NotFound src={notFound} alt="Not Found" />
+          <NotFound data-testid="404" src={notFound} alt="Not Found" />
         ) : (
           data && (
             <Container>

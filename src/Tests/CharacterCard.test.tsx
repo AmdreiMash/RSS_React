@@ -4,47 +4,36 @@ import { it } from 'vitest';
 import CharacterCard from '../components/CharacterCard';
 import { BrowserRouter } from 'react-router-dom';
 import userEvent from '@testing-library/user-event';
-import testData from './cardTestData';
+import testData from './cardTestData.json';
 
 describe('CharacterCard', () => {
-  it('renders CharacterCard', () => {
+  it('Shold show modal and overlay', async () => {
     render(
       <BrowserRouter>
-        <CharacterCard {...testData} />
+        <CharacterCard {...testData.results[0]} />
       </BrowserRouter>
     );
-    expect(screen.getByText(/Rick Sanchez/i));
-  });
-  it('Shold add shadow if user hover the product card', async () => {
-    render(
-      <BrowserRouter>
-        <CharacterCard {...testData} />
-      </BrowserRouter>
-    );
-    const card = screen.getByTestId('card');
-
-    if (!card) return console.error('CharacterCard not found');
+    const card = screen.getByTestId('1');
+    expect(screen.getByTestId('1cross')).toHaveStyle('display: none');
+    expect(screen.getByTestId('1overlay')).toHaveStyle('width: 0');
     await userEvent.click(card);
-    const male = await screen.findByText('Gender: Male');
     const location = await screen.findByText('Citadel of Ricks');
+    const male = await screen.findByText('Gender: Male');
+    expect(screen.getByTestId('1overlay')).toHaveStyle('width: 100vw');
+    expect(screen.getByTestId('1cross')).toHaveStyle('display: block');
     expect(location && male).toBeInTheDocument;
   });
 
   it('Like shold work', async () => {
     render(
       <BrowserRouter>
-        <CharacterCard {...testData} />
+        <CharacterCard {...testData.results[0]} />
       </BrowserRouter>
     );
 
     const Like = screen.getByRole('button');
-
-    if (!Like) throw new Error('Like not found');
-
     expect(Like.getAttribute('fill')).toBe('#808080');
-
     await userEvent.click(Like);
-
     expect(Like.getAttribute('fill')).toBe('#FF7979');
   });
 });
