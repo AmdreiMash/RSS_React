@@ -8,12 +8,14 @@ import axios from 'axios';
 import { ResponseData } from '../Types/Types';
 import errorMessage from '../ErrorMessages';
 import notFound from '../../assets/notFound.jpeg';
+import { SyncOutlined } from '@ant-design/icons';
+import Space from 'antd/es/space';
 
 const HomePage = () => {
   const [data, setData] = useState<ResponseData>();
   const [error, setError] = useState('');
   const [loaded, setLoaded] = useState(false);
-  const [qyery, setQyery] = useState('');
+  const [qyery, setQyery] = useState(localStorage.getItem('Seach Value') || '');
 
   const getData = (value: string) => {
     setLoaded(true);
@@ -40,14 +42,15 @@ const HomePage = () => {
   return (
     <Wrapper>
       <Header />
-      {loaded && <p>Загрузка</p>}
       <Main>
         <MainHeading>
           <h1>Home</h1>
           <SearchBar {...{ InputHeandlet, error, loaded }} />
         </MainHeading>
         {loaded ? (
-          <p>Загрузка</p>
+          <Space style={{ fontSize: '20px' }}>
+            Loding <SyncOutlined spin />
+          </Space>
         ) : error !== '' && error !== errorMessage.characters ? (
           <NotFound src={notFound} alt="Not Found" />
         ) : (

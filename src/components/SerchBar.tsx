@@ -30,6 +30,7 @@ const SearchBar = (props: SerchBarProps) => {
   return (
     <Label
       width="90%"
+      style={{ height: '27px' }}
       message={error}
       status={error !== '' || error !== errorMessage.characters}
       bottom="calc(-120% + 100vw * 0.01)"

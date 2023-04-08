@@ -27,6 +27,7 @@ export const MainHeading = styled.div`
   width: 90%;
 `;
 export const NotFoundWrapper = styled.div`
+  margin-top: 50px;
   width: 90vw;
   height: 90vh;
   background-image: url('./404 Error-rafiki-gray.svg');
