@@ -6,7 +6,7 @@ async function getDataByParams(params: string[]) {
   });
   try {
     const response = await axios(`https://rickandmortyapi.com/api/character/${qyery}`);
-    return (response.status = 200 ? response.data : false);
+    return response.status === 200 ? response.data : false;
   } catch {
     return false;
   }

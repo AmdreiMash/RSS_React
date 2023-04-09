@@ -7,7 +7,7 @@ import SearchBar from '../components/SerchBar';
 describe('Search bar', () => {
   it('Shold save value in local storge', async () => {
     const { unmount } = render(
-      <SearchBar error="123" InputHeandlet={(value) => console.log(value)} loaded={false} />
+      <SearchBar error="123" InputHeandlet={(value) => value} loaded={false} />
     );
     const testValue = 'Hello Test';
 

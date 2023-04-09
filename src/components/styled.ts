@@ -124,4 +124,5 @@ export const DisableScroll = createGlobalStyle<{ show: boolean }>`
     overflow:${(props) => (props.show ? 'hidden' : '')};
   }
 `;
+
 export default style;

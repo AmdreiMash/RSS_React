@@ -2,7 +2,7 @@ import { setupServer } from 'msw/node';
 import { rest } from 'msw';
 import cardTestData from '../cardTestData.json';
 
-export const server = setupServer(
+const server = setupServer(
   rest.get('https://rickandmortyapi.com/api/character/', (req, res, ctx) => {
     if (req.url.searchParams.get('name') === 'rick') {
       return res(ctx.status(200), ctx.json({ results: [cardTestData.results[0]] }));
