@@ -27,10 +27,9 @@ describe('API-calls test', () => {
     expect(rick).toHaveTextContent(testData.results[0].name);
     const morty = screen.getByTestId('2');
     expect(morty).toBeInTheDocument();
-    expect(morty.children[2].childElementCount).toBe(5);
     expect(morty.children[2]).toHaveTextContent(testData.results[1].name);
+    expect(screen.queryAllByRole('card')).toHaveLength(2);
   });
-
   it('Sheld return alert', async () => {
     render(
       <BrowserRouter>
@@ -49,5 +48,6 @@ describe('API-calls test', () => {
 
     await waitForElementToBeRemoved(() => screen.queryByRole('alert'));
     expect(screen.getByTestId('404')).toBeInTheDocument;
+    expect(screen.queryAllByRole('card')).toHaveLength(0);
   });
 });
