@@ -6,11 +6,15 @@ import FormPageWrapper from '../components/Elements/FormPageWrapper';
 import FormCards from '../components/FormCard/FormCards';
 import { CardData } from '../Types/Types';
 import Message from '../components/Saider/Elements/SubmitMessage';
+import { useAppDiepatch, useAppSelector } from '../store/hooks/redux';
+import { AppSlice } from '../store/redusers/UseSlice';
 
 const FormPage = () => {
   const [showForm, showFormTogglet] = useState(false);
-  const [cards, setCards] = useState([] as CardData[]);
+  const { formCards } = useAppSelector((state) => state.AppReducer);
+  const { addFormCard } = AppSlice.actions;
   const [showMessage, showMessageTogglet] = useState(false);
+  const dispatch = useAppDiepatch();
 
   const showFormHandler = () => {
     showFormTogglet(!showForm);
@@ -18,7 +22,7 @@ const FormPage = () => {
 
   const addNewCard = (data: CardData) => {
     const img = URL.createObjectURL(data.file[0]);
-    setCards([...cards, { ...data, img } as CardData]);
+    dispatch(addFormCard({ ...data, img }));
     showMessageTogglet(true);
     setTimeout(() => {
       showMessageTogglet(false);
@@ -31,7 +35,7 @@ const FormPage = () => {
       <Header />
       <FormPageWrapper>
         <Saider showForm={showForm} showFormHandler={showFormHandler} addNewCard={addNewCard} />
-        <FormCards showForm={showForm} cards={cards} />
+        <FormCards showForm={showForm} cards={formCards} />
       </FormPageWrapper>
     </Wrapper>
   );

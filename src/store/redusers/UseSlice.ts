@@ -1,9 +1,7 @@
-import { PayloadAction } from '@reduxjs/toolkit';
-import { createSlice } from '@reduxjs/toolkit/dist/createSlice';
+import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 import { CardData, Character } from 'Types/Types';
 
 interface AppState {
-  isLouding: boolean;
   formCards: CardData[];
   homeCards: Character[];
   serchQuery: string;
@@ -12,7 +10,6 @@ interface AppState {
 }
 
 const initialState: AppState = {
-  isLouding: false,
   formCards: [],
   homeCards: [],
   serchQuery: '',
