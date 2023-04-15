@@ -10,31 +10,35 @@ import notFound from '../../assets/notFound.jpeg';
 import { SyncOutlined } from '@ant-design/icons';
 import Space from 'antd/es/space';
 import getDataByParams from '../API/getDataByParams';
+import { useAppDiepatch, useAppSelector } from '../store/hooks/redux';
+import { AppSlice } from '../store/redusers/UseSlice';
 
 const HomePage = () => {
   const [data, setData] = useState<ResponseData>();
-  const [error, setError] = useState('');
   const [loaded, setLoaded] = useState(false);
-  const [qyery, setQyery] = useState(localStorage.getItem('Seach Value') || '');
+
+  const { serchQuery, error, activCard } = useAppSelector((store) => store.AppReducer);
+  const { setSerchQuery, setError, setActivCard } = AppSlice.actions;
+  const dispatch = useAppDiepatch();
 
   const getData = async (value: string) => {
     setLoaded(true);
     const response = await getDataByParams([`name=${value}`]);
     if (response) {
       setData(response);
-      setError('');
+      dispatch(setError(''));
     } else {
-      setError('Invalid request, try something else');
+      dispatch(setError('Invalid request, try something else'));
     }
     setLoaded(false);
   };
 
   useEffect(() => {
-    getData(qyery);
-  }, [qyery]);
+    getData(serchQuery);
+  }, [serchQuery]);
 
   const InputHeandlet = (value: string) => {
-    setQyery(value);
+    dispatch(setSerchQuery(value));
   };
 
   return (

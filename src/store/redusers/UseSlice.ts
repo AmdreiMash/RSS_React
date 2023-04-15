@@ -24,10 +24,10 @@ export const AppSlice = createSlice({
     setSerchQuery(state, action: PayloadAction<string>) {
       state.serchQuery = action.payload;
     },
-    serError(state, action: PayloadAction<string>) {
+    setError(state, action: PayloadAction<string>) {
       state.error = action.payload;
     },
-    activCard(state, action: PayloadAction<number>) {
+    setActivCard(state, action: PayloadAction<number>) {
       state.activCard = action.payload;
     },
     addFormCard(state, action: PayloadAction<CardData>) {

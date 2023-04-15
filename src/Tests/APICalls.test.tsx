@@ -6,6 +6,8 @@ import { BrowserRouter } from 'react-router-dom';
 import server from './mocks/server';
 import userEvent from '@testing-library/user-event';
 import testData from './cardTestData.json';
+import { store } from '../store/store';
+import { Provider } from 'react-redux';
 
 beforeAll(() => server.listen());
 
@@ -16,9 +18,11 @@ afterAll(() => server.close());
 describe('API-calls test', () => {
   it('Sheld return Rick & Morty', async () => {
     render(
-      <BrowserRouter>
-        <HomePage />
-      </BrowserRouter>
+      <Provider store={store}>
+        <BrowserRouter>
+          <HomePage />
+        </BrowserRouter>
+      </Provider>
     );
     await waitForElementToBeRemoved(() => screen.queryByRole('alert'));
 
@@ -32,9 +36,11 @@ describe('API-calls test', () => {
   });
   it('Sheld return alert', async () => {
     render(
-      <BrowserRouter>
-        <HomePage />
-      </BrowserRouter>
+      <Provider store={store}>
+        <BrowserRouter>
+          <HomePage />
+        </BrowserRouter>
+      </Provider>
     );
     await waitForElementToBeRemoved(() => screen.queryByRole('alert'));
 

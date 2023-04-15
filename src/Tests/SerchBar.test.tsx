@@ -3,11 +3,15 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { describe, it } from 'vitest';
 import SearchBar from '../components/SerchBar';
+import { Provider } from 'react-redux';
+import { store } from '../store/store';
 
 describe('Search bar', () => {
   it('Shold save value in local storge', async () => {
     const { unmount } = render(
-      <SearchBar error="123" InputHeandlet={(value) => value} loaded={false} />
+      <Provider store={store}>
+        <SearchBar InputHeandlet={(value) => value} loaded={false} />
+      </Provider>
     );
     const testValue = 'Hello Test';
 
@@ -15,10 +19,11 @@ describe('Search bar', () => {
     await userEvent.type(input, testValue);
 
     unmount();
-
-    expect(localStorage.getItem('Seach Value')).toBe(testValue);
-
-    render(<SearchBar error="123" InputHeandlet={(value) => value + 1} loaded={false} />);
+    render(
+      <Provider store={store}>
+        <SearchBar InputHeandlet={(value) => value + 1} loaded={false} />
+      </Provider>
+    );
 
     input = screen.getByPlaceholderText('Enter a character name');
 

@@ -3,18 +3,21 @@ import { Input } from 'antd';
 import styled from './styled';
 import Label from './Saider/Elements/Lable';
 import errorMessage from '../ErrorMessages';
+import { useAppDiepatch, useAppSelector } from '../store/hooks/redux';
+import { AppSlice } from '../store/redusers/UseSlice';
 
 type SerchBarProps = {
   InputHeandlet: (value: string) => void;
   loaded: boolean;
-  error: string;
 };
 
 const SearchBar = (props: SerchBarProps) => {
   const { Search } = Input;
-  const [value, setValue] = useState(localStorage.getItem('Seach Value') || '');
-  const { loaded, InputHeandlet, error } = props;
-
+  const { serchQuery, error } = useAppSelector((store) => store.AppReducer);
+  const [value, setValue] = useState(serchQuery);
+  const { setSerchQuery } = AppSlice.actions;
+  const dispatch = useAppDiepatch();
+  const { InputHeandlet, loaded } = props;
   const valueRef = useRef('');
 
   useEffect(() => {
@@ -23,7 +26,7 @@ const SearchBar = (props: SerchBarProps) => {
 
   useEffect(() => {
     return () => {
-      localStorage.setItem('Seach Value', valueRef.current);
+      dispatch(setSerchQuery(valueRef.current));
     };
   }, []);
 

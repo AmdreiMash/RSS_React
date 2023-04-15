@@ -4,13 +4,19 @@ import { describe, it } from 'vitest';
 import { BrowserRouter } from 'react-router-dom';
 import FormPage from '../pages/FormPage';
 import userEvent from '@testing-library/user-event';
+import { Provider } from 'react-redux';
+import { setupStore } from '../store/store';
+
+const store = setupStore();
 
 describe('FormPage', () => {
   it('renders FormPage', async () => {
     render(
-      <BrowserRouter>
-        <FormPage />
-      </BrowserRouter>
+      <Provider store={store}>
+        <BrowserRouter>
+          <FormPage />
+        </BrowserRouter>
+      </Provider>
     );
     const addNewCard = screen.getByText('Add card');
 

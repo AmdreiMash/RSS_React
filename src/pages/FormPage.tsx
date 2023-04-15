@@ -11,9 +11,9 @@ import { AppSlice } from '../store/redusers/UseSlice';
 
 const FormPage = () => {
   const [showForm, showFormTogglet] = useState(false);
+  const [showMessage, showMessageTogglet] = useState(false);
   const { formCards } = useAppSelector((state) => state.AppReducer);
   const { addFormCard } = AppSlice.actions;
-  const [showMessage, showMessageTogglet] = useState(false);
   const dispatch = useAppDiepatch();
 
   const showFormHandler = () => {
