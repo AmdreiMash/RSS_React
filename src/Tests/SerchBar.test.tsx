@@ -10,7 +10,7 @@ describe('Search bar', () => {
   it('Shold save value in local storge', async () => {
     const { unmount } = render(
       <Provider store={store}>
-        <SearchBar InputHeandlet={(value) => value} loaded={false} />
+        <SearchBar InputHeandlet={(value) => value} isLoading={false} error={undefined} />
       </Provider>
     );
     const testValue = 'Hello Test';
@@ -21,7 +21,7 @@ describe('Search bar', () => {
     unmount();
     render(
       <Provider store={store}>
-        <SearchBar InputHeandlet={(value) => value + 1} loaded={false} />
+        <SearchBar InputHeandlet={(value) => value + 1} isLoading={false} error={undefined} />
       </Provider>
     );
 
