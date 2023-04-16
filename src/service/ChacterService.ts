@@ -11,8 +11,11 @@ export const characterApi = createApi({
         url: `character/`,
         params: { 'name': name },
       }),
-    }),
+    transformResponse: (response: ResponseData) => {
+      console.log(response)
+        return response;
+    },
   }),
-});
+})});
 
 export const { useCharactersQuery } = characterApi;
