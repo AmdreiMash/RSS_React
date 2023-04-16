@@ -41,7 +41,6 @@ describe('API-calls test', () => {
         </BrowserRouter>
       </Provider>
     );
-    await waitForElementToBeRemoved(() => screen.queryByRole('alert'));
 
     const input = await screen.findByPlaceholderText<HTMLInputElement>('Enter a character name');
 

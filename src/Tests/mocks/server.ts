@@ -4,7 +4,6 @@ import cardTestData from '../cardTestData.json';
 
 const server = setupServer(
   rest.get('https://rickandmortyapi.com/api/character', (req, res, ctx) => {
-    console.log(req.url.searchParams.get('name'));
     if (req.url.searchParams.get('name') === 'rick') {
       return res(ctx.status(200), ctx.json({ results: [cardTestData.results[0]] }));
     } else if (req.url.searchParams.get('name') === 'morty') {
@@ -16,6 +15,5 @@ const server = setupServer(
     }
   })
 );
-
 
 export default server;
