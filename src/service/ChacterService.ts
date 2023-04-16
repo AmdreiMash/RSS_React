@@ -13,6 +13,7 @@ export const characterApi = createApi({
       }),
     transformResponse: (response: ResponseData) => {
       console.log(response)
+      console.log('response')
         return response;
     },
   }),
