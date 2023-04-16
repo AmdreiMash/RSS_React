@@ -51,6 +51,7 @@ describe('API-calls test', () => {
     fireEvent.keyDown(input, { key: 'Enter', code: 'Enter' });
 
     await waitForElementToBeRemoved(() => screen.queryByRole('alert'));
+
     expect(screen.getByTestId('404')).toBeInTheDocument;
     expect(screen.queryAllByRole('card')).toHaveLength(0);
   });

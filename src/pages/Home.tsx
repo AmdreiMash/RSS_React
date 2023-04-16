@@ -20,7 +20,6 @@ const HomePage = () => {
   const InputHeandlet = (value: string) => {
     dispatch(setSerchQuery(value));
   };
-  //console.log(data);
   return (
     <Wrapper>
       <Header />

@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import { ResponseData } from '../Types/Types';
 
@@ -9,14 +8,13 @@ export const characterApi = createApi({
     characters: builder.query<ResponseData, string>({
       query: (name) => ({
         url: `character/`,
-        params: { 'name': name },
+        params: { name: name },
       }),
-    transformResponse: (response: ResponseData) => {
-      console.log(response)
-      console.log('response')
+      transformResponse: (response: ResponseData) => {
         return response;
-    },
+      },
+    }),
   }),
-})});
+});
 
 export const { useCharactersQuery } = characterApi;
