@@ -3,16 +3,24 @@ import React from 'react';
 import { fireEvent, render, screen, waitForElementToBeRemoved } from '@testing-library/react';
 import { describe, it } from 'vitest';
 import { BrowserRouter } from 'react-router-dom';
-import server from './mocks/server';
+//import server from './mocks/server';
 import userEvent from '@testing-library/user-event';
 import testData from './cardTestData.json';
-import { store } from '../store/store';
+import { setupStore } from '../store/store';
 import { Provider } from 'react-redux';
+import { setupServer } from 'msw/node';
+import { rest } from 'msw';
+
+const store = setupStore({});
+
+const server = setupServer(
+  rest.get('https://rickandmortyapi.com/api/character/', (req, res, ctx) => {
+    res(ctx.json(testData));
+  })
+);
 
 beforeAll(() => server.listen());
-
 afterEach(() => server.resetHandlers());
-
 afterAll(() => server.close());
 
 describe('API-calls test', () => {
@@ -25,7 +33,6 @@ describe('API-calls test', () => {
       </Provider>
     );
     await waitForElementToBeRemoved(() => screen.queryByRole('alert'));
-
     const rick = screen.getByTestId('1');
     expect(rick).toBeInTheDocument();
     expect(rick).toHaveTextContent(testData.results[0].name);

@@ -1,41 +1,21 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Header from '../components/Header';
 import SearchBar from '../components/SerchBar';
 import { Main, Container, MainHeading, NotFound } from './styles';
 import Wrapper from '../components/Elements/PageWrapper';
 import CharacterCard from '../components/CharacterCard';
-import { ResponseData } from '../Types/Types';
-import errorMessage from '../ErrorMessages';
 import notFound from '../../assets/notFound.jpeg';
 import { SyncOutlined } from '@ant-design/icons';
 import Space from 'antd/es/space';
-import getDataByParams from '../API/getDataByParams';
 import { useAppDiepatch, useAppSelector } from '../store/hooks/redux';
 import { AppSlice } from '../store/redusers/UseSlice';
+import { useCharactersQuery } from '../service/ChacterService';
 
 const HomePage = () => {
-  const [data, setData] = useState<ResponseData>();
-  const [loaded, setLoaded] = useState(false);
-
-  const { serchQuery, error, activCard } = useAppSelector((store) => store.AppReducer);
-  const { setSerchQuery, setError, setActivCard } = AppSlice.actions;
+  const { serchQuery } = useAppSelector((store) => store.AppReducer);
+  const { setSerchQuery } = AppSlice.actions;
+  const { data, error, isFetching } = useCharactersQuery(serchQuery);
   const dispatch = useAppDiepatch();
-
-  const getData = async (value: string) => {
-    setLoaded(true);
-    const response = await getDataByParams([`name=${value}`]);
-    if (response) {
-      setData(response);
-      dispatch(setError(''));
-    } else {
-      dispatch(setError('Invalid request, try something else'));
-    }
-    setLoaded(false);
-  };
-
-  useEffect(() => {
-    getData(serchQuery);
-  }, [serchQuery]);
 
   const InputHeandlet = (value: string) => {
     dispatch(setSerchQuery(value));
@@ -47,16 +27,16 @@ const HomePage = () => {
       <Main>
         <MainHeading>
           <h1>Home</h1>
-          <SearchBar {...{ InputHeandlet, error, loaded }} />
+          <SearchBar {...{ InputHeandlet, error, isLoading: isFetching }} />
         </MainHeading>
-        {loaded ? (
+        {isFetching ? (
           <Space style={{ fontSize: '20px' }} role="alert">
             Loding <SyncOutlined spin />
           </Space>
-        ) : error !== '' && error !== errorMessage.characters ? (
+        ) : error || data?.results.length === 0 ? (
           <NotFound data-testid="404" src={notFound} alt="Not Found" />
         ) : (
-          data && (
+          data?.results && (
             <Container>
               {data.results.map((e) => (
                 <CharacterCard key={e.id} {...e} />

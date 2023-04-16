@@ -1,12 +1,16 @@
-import { combineReducers, configureStore } from '@reduxjs/toolkit';
+import { PreloadedState, combineReducers, configureStore } from '@reduxjs/toolkit';
 import AppReducer from './redusers/UseSlice';
+import { characterApi } from '../service/ChacterService';
 const rootReducer = combineReducers({
   AppReducer,
+  [characterApi.reducerPath]: characterApi.reducer,
 });
 
-export const setupStore = () => {
+export const setupStore = (preloadedState?: PreloadedState<RootState>) => {
   return configureStore({
     reducer: rootReducer,
+    preloadedState,
+    middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(characterApi.middleware),
   });
 };
 
