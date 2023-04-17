@@ -7,7 +7,7 @@ import FormCards from '../components/FormCard/FormCards';
 import { CardData } from '../Types/Types';
 import Message from '../components/Saider/Elements/SubmitMessage';
 import { useAppDiepatch, useAppSelector } from '../store/hooks/redux';
-import { AppSlice } from '../store/redusers/UseSlice';
+import { AppSlice } from '../store/redusers/appSlice';
 
 const FormPage = () => {
   const [showForm, showFormTogglet] = useState(false);

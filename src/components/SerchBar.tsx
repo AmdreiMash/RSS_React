@@ -4,7 +4,7 @@ import styled from './styled';
 import Label from './Saider/Elements/Lable';
 import errorMessage from '../ErrorMessages';
 import { useAppDiepatch, useAppSelector } from '../store/hooks/redux';
-import { AppSlice } from '../store/redusers/UseSlice';
+import { AppSlice } from '../store/redusers/appSlice';
 import { FetchBaseQueryError } from '@reduxjs/toolkit/dist/query/react';
 import { SerializedError } from '@reduxjs/toolkit';
 

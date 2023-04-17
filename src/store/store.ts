@@ -1,5 +1,5 @@
 import { PreloadedState, combineReducers, configureStore } from '@reduxjs/toolkit';
-import AppReducer from './redusers/UseSlice';
+import AppReducer from './redusers/appSlice';
 import { characterApi } from '../service/ChacterService';
 const rootReducer = combineReducers({
   AppReducer,

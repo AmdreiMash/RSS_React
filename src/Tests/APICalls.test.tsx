@@ -8,7 +8,22 @@ import userEvent from '@testing-library/user-event';
 import testData from './cardTestData.json';
 import { setupStore } from '../store/store';
 import { Provider } from 'react-redux';
-import server from './mocks/server';
+import { setupServer } from 'msw/node';
+import { rest } from 'msw';
+
+const server = setupServer(
+  rest.get('https://rickandmortyapi.com/api/character', (req, res, ctx) => {
+    if (req.url.searchParams.get('name') === 'rick') {
+      return res(ctx.status(200), ctx.json({ results: [testData.results[0]] }));
+    } else if (req.url.searchParams.get('name') === 'morty') {
+      return res(ctx.status(200), ctx.json({ results: [testData.results[1]] }));
+    } else if (req.url.searchParams.get('name') === '') {
+      return res(ctx.status(200), ctx.json({ results: testData.results }));
+    } else {
+      return res(ctx.status(404));
+    }
+  })
+);
 
 const store = setupStore({});
 

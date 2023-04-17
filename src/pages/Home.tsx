@@ -8,7 +8,7 @@ import notFound from '../../assets/notFound.jpeg';
 import { SyncOutlined } from '@ant-design/icons';
 import Space from 'antd/es/space';
 import { useAppDiepatch, useAppSelector } from '../store/hooks/redux';
-import { AppSlice } from '../store/redusers/UseSlice';
+import { AppSlice } from '../store/redusers/appSlice';
 import { useCharactersQuery } from '../service/ChacterService';
 
 const HomePage = () => {
