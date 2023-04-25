@@ -2,7 +2,7 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { describe, it } from 'vitest';
 import { BrowserRouter } from 'react-router-dom';
-import About from '../pages/About';
+import About from '../../pages/About';
 
 describe('About', () => {
   it('renders page About', () => {

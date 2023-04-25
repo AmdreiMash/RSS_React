@@ -2,7 +2,7 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { describe, it } from 'vitest';
 import { BrowserRouter } from 'react-router-dom';
-import FormPage from '../pages/FormPage';
+import FormPage from '../../pages/Form';
 import userEvent from '@testing-library/user-event';
 import { Provider } from 'react-redux';
 import { setupStore } from '../store/store';

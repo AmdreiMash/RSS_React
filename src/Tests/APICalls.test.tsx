@@ -1,5 +1,5 @@
 import 'whatwg-fetch';
-import HomePage from '../pages/Home';
+import HomePage from '../../pages/Home';
 import React from 'react';
 import { fireEvent, render, screen, waitForElementToBeRemoved } from '@testing-library/react';
 import { describe, it } from 'vitest';

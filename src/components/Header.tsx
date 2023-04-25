@@ -25,11 +25,7 @@ const Header = () => {
     },
   ];
 
-  return (
-    <header>
-      <Menu mode="horizontal" selectedKeys={[current]} items={navItems} />
-    </header>
-  );
+  return <Menu mode="horizontal" selectedKeys={[current]} items={navItems} />;
 };
 
 export default Header;

@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import Header from '../components/Header';
-import Wrapper from '../components/Elements/PageWrapper';
-import Saider from '../components/Saider/Saider';
-import FormPageWrapper from '../components/Elements/FormPageWrapper';
-import FormCards from '../components/FormCard/FormCards';
-import { CardData } from '../Types/Types';
-import Message from '../components/Saider/Elements/SubmitMessage';
-import { useAppDiepatch, useAppSelector } from '../store/hooks/redux';
-import { AppSlice } from '../store/redusers/appSlice';
+import Header from '../src/components/Header';
+import Wrapper from '../src/components/Elements/PageWrapper';
+import Saider from '../src/components/Saider/Saider';
+import FormPageWrapper from '../src/components/Elements/FormPageWrapper';
+import FormCards from '../src/components/FormCard/FormCards';
+import { CardData } from '../src/Types/Types';
+import Message from '../src/components/Saider/Elements/SubmitMessage';
+import { useAppDiepatch, useAppSelector } from '../src/store/hooks/redux';
+import { AppSlice } from '../src/store/redusers/appSlice';
 
 const FormPage = () => {
   const [showForm, showFormTogglet] = useState(false);
@@ -32,7 +32,6 @@ const FormPage = () => {
   return (
     <Wrapper>
       <Message showe={showMessage}>Successfully</Message>
-      <Header />
       <FormPageWrapper>
         <Saider showForm={showForm} showFormHandler={showFormHandler} addNewCard={addNewCard} />
         <FormCards showForm={showForm} cards={formCards} />

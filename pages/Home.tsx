@@ -1,15 +1,15 @@
 import React from 'react';
-import Header from '../components/Header';
-import SearchBar from '../components/SerchBar';
-import { Main, Container, MainHeading, NotFound } from './styles';
-import Wrapper from '../components/Elements/PageWrapper';
-import CharacterCard from '../components/CharacterCard';
-import notFound from '../../assets/notFound.jpeg';
+import Header from '../src/components/Header';
+import SearchBar from '../src/components/SerchBar';
+import { Main, Container, MainHeading, NotFound } from '../src/pages/styles';
+import Wrapper from '../src/components/Elements/PageWrapper';
+import CharacterCard from '../src/components/CharacterCard';
+import notFound from '../assets/notFound.jpeg';
 import { SyncOutlined } from '@ant-design/icons';
-import Space from 'antd/es/space';
-import { useAppDiepatch, useAppSelector } from '../store/hooks/redux';
-import { AppSlice } from '../store/redusers/appSlice';
-import { useCharactersQuery } from '../service/ChacterService';
+//import Space from 'antd/es/space';
+import { useAppDiepatch, useAppSelector } from '../src/store/hooks/redux';
+import { AppSlice } from '../src/store/redusers/appSlice';
+import { useCharactersQuery } from '../src/service/ChacterService';
 
 const HomePage = () => {
   const { serchQuery } = useAppSelector((store) => store.AppReducer);
@@ -22,16 +22,16 @@ const HomePage = () => {
   };
   return (
     <Wrapper>
-      <Header />
+      {/*<Header />*/}
       <Main>
         <MainHeading>
           <h1>Home</h1>
           <SearchBar {...{ InputHeandlet, error, isLoading: isFetching }} />
         </MainHeading>
         {isFetching ? (
-          <Space style={{ fontSize: '20px' }} role="alert">
+          <div style={{ fontSize: '20px' }} role="alert">
             Loding <SyncOutlined spin />
-          </Space>
+          </div>
         ) : error || data?.results.length === 0 ? (
           <NotFound data-testid="404" src={notFound} alt="Not Found" />
         ) : (
