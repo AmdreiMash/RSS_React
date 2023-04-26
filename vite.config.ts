@@ -21,6 +21,9 @@ export default defineConfig({
     svgr(),
     ssr(),
   ],
+  ssr: {
+    noExternal: ['styled-components', '@emotion/*'],
+  },
   server: {
     port: 8080,
   },
