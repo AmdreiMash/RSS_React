@@ -12,12 +12,6 @@ const passToClient = ['pageProps'];
 async function render(pageContext) {
   const { Page, pageProps, urlPathname } = pageContext;
 
-  const header = renderToString(
-    <StaticRouter location={urlPathname}>
-      <Header />
-    </StaticRouter>
-  );
-
   const { pipe } = renderToPipeableStream(Page, {
     onShellReady() {
       console.log('onShellReady()');
