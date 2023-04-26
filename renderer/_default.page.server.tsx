@@ -2,6 +2,7 @@ import React from 'react';
 import { renderToString } from 'react-dom/server';
 import { StaticRouter } from 'react-router-dom/server';
 import { escapeInject, dangerouslySkipEscape } from 'vite-plugin-ssr/server';
+import Header from '../src/components/Header';
 
 export { render };
 export { passToClient };
@@ -12,6 +13,7 @@ async function render(pageContext) {
   const { Page, pageProps, urlPathname } = pageContext;
   const pageHtml = renderToString(
     <StaticRouter location={urlPathname}>
+      <Header />
       <Page {...pageProps} />
     </StaticRouter>
   );

@@ -1,5 +1,5 @@
 import React from 'react';
-import { CardData } from 'Types/Types';
+import { CardData } from '../../Types/Types';
 import CardWrapper from './Elements/CardWrapper';
 
 const FormCard = (data: CardData) => {

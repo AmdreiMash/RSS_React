@@ -11,6 +11,7 @@ async function render(pageContext) {
   hydrateRoot(
     document.getElementById('react-root') as HTMLElement,
     <BrowserRouter>
+      <Header />
       <Page {...pageProps} />
     </BrowserRouter>
   );
