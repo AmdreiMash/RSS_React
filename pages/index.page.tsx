@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import About from './About';
 import Home from './Home';
@@ -14,13 +14,13 @@ export { Page };
 
 function Page() {
   return (
-    <Provider store={store}>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/About" element={<About />} />
-        <Route path="/Form" element={<Form />} />
-        {/*<Route path="*" element={<NotFound />} />*/}
-      </Routes>
-    </Provider>
+    //<Provider store={store}>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/About" element={<About />} />
+      <Route path="/Form" element={<Form />} />
+      {/*<Route path="*" element={<NotFound />} />*/}
+    </Routes>
+    //</Provider>
   );
 }

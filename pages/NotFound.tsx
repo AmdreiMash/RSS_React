@@ -2,7 +2,7 @@ import HomeOutlined from '@ant-design/icons/lib/icons/HomeOutlined';
 import Button from 'antd/es/button/button';
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { NotFoundWrapper } from '../src/pages/styles';
+import { NotFoundWrapper } from './styles';
 
 const NotFound = () => {
   return (

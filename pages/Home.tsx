@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from '../src/components/Header';
 import SearchBar from '../src/components/SerchBar';
-import { Main, Container, MainHeading, NotFound } from '../src/pages/styles';
+import { Main, Container, MainHeading, NotFound } from './styles';
 import Wrapper from '../src/components/Elements/PageWrapper';
 import CharacterCard from '../src/components/CharacterCard';
 import notFound from '../assets/notFound.jpeg';
