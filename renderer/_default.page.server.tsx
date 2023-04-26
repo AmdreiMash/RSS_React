@@ -32,7 +32,6 @@ async function render(pageContext) {
     <head> 
     <title>SSR by Dron</title>
     <link rel="shortcut icon" href="../assets/i'm_fine.png" type="image/x-icon">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/antd/3.11.2/antd.css">
       <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/antd/4.16.10/antd.css"

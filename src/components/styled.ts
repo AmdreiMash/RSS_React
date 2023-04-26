@@ -68,7 +68,7 @@ export const Text = styled.div`
   margin-left: 8px;
   overflow: hidden;
   text-overflow: ellipsis;
-  line-height: 1;
+  line-height: 1.1;
 `;
 
 export const Name = styled.div`

@@ -9,7 +9,7 @@
     "preview": "vite preview",
     "test": "vitest run --coverage",
     "deploy": " ntl deploy --prod",
-    "lint": "npx eslint src***",
+    "lint": "eslint . --ext .ts --ext .tsx",
     "clean": "rm pages/*.js && rm src/*.js && rm src/**/*.js && rm src/**/**/*.js && rm src/**/**/**/*.js"
   },
   "dependencies": {
