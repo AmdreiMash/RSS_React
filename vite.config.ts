@@ -19,7 +19,10 @@ export default defineConfig({
       },
     }),
     svgr(),
-    ssr(),
+    ssr({
+      prerender: true,
+      includeAssetsImportedByServer: true,
+    }),
   ],
   ssr: {
     noExternal: ['styled-components', '@emotion/*'],

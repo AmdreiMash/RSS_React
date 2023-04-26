@@ -11,7 +11,6 @@ const store = setupStore();
 
 async function render(pageContext) {
   const { Page, pageProps } = pageContext;
-  console.log(Page);
   hydrateRoot(
     document.getElementById('react-root') as HTMLElement,
     <Provider store={store}>

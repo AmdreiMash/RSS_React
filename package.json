@@ -20,6 +20,7 @@
   },
   "devDependencies": {
     "@ant-design/icons": "^5.0.1",
+    "@netlify/functions": "github:netlify/functions",
     "@reduxjs/toolkit": "^1.9.3",
     "@svgr/cli": "^6.5.1",
     "@testing-library/jest-dom": "^5.16.5",
