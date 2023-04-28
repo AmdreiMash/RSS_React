@@ -1,4 +1,4 @@
-export type CardData = {
+export interface FormData {
   [key: string]: string | boolean | FileList | undefined;
   name: string;
   email: string;
@@ -7,8 +7,18 @@ export type CardData = {
   file: FileList;
   policy: boolean;
   gender: string;
-  img?: string;
-};
+}
+
+export interface CardData {
+  [key: string]: string | boolean | undefined;
+  name: string;
+  email: string;
+  birthday: string;
+  country: string;
+  policy: boolean;
+  gender: string;
+  img: string;
+}
 
 export type Info = {
   [key: string]: number | string;

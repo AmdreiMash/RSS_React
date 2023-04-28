@@ -16,9 +16,10 @@ const Label = styled.label<{
     content: '${(props) => (props.status ? props.message : '')}';
     position: absolute;
     left: 0;
-    bottom: ${(props) => (props.bottom ? props.bottom : '-12px')};
+    bottom: ${(props) => (props.bottom ? props.bottom : '-20px')};
     color: red;
     font-size: 12px;
+    line-height: 0.9;
   }
 `;
 

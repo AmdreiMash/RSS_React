@@ -3,8 +3,6 @@ import { Route, Routes } from 'react-router-dom';
 import About from './About';
 import Home from './Home';
 import Form from './Form';
-import Header from '../src/components/Header';
-import { setupStore } from '../src/store/store';
 
 export { Page };
 

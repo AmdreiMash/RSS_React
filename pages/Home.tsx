@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from '../src/components/Header';
+
 import SearchBar from '../src/components/SerchBar';
 import { Main, Container, MainHeading, NotFound } from './styles';
 import Wrapper from '../src/components/Elements/PageWrapper';

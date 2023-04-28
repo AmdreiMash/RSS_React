@@ -1,9 +1,9 @@
 import styled from '../styled';
 import React from 'react';
 import { UseFormRegister } from 'react-hook-form/dist/types';
-import { CardData } from '../../Types/Types';
+import { FormData } from '../../Types/Types';
 
-const Select = (props: { register: UseFormRegister<CardData> }) => {
+const Select = (props: { register: UseFormRegister<FormData> }) => {
   const { register } = props;
   return (
     <select

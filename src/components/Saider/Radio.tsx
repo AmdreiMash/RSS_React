@@ -1,9 +1,9 @@
 import styled from '../styled';
 import React from 'react';
-import { CardData } from '../../Types/Types';
+import { FormData } from '../../Types/Types';
 import { UseFormRegister } from 'react-hook-form/dist/types';
 
-const Radio = (props: { register: UseFormRegister<CardData> }) => {
+const Radio = (props: { register: UseFormRegister<FormData> }) => {
   const { register } = props;
   return (
     <div style={styled.label}>

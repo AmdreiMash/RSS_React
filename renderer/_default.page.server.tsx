@@ -8,7 +8,6 @@ import { Provider } from 'react-redux';
 import { ServerStyleSheet } from 'styled-components';
 
 const store = setupStore();
-
 export { render };
 export { passToClient };
 

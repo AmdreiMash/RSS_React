@@ -4,7 +4,7 @@ import Wrapper from '../src/components/Elements/PageWrapper';
 import Saider from '../src/components/Saider/Saider';
 import FormPageWrapper from '../src/components/Elements/FormPageWrapper';
 import FormCards from '../src/components/FormCard/FormCards';
-import { CardData } from '../src/Types/Types';
+import { FormData } from '../src/Types/Types';
 import Message from '../src/components/Saider/Elements/SubmitMessage';
 import { useAppDiepatch, useAppSelector } from '../src/store/hooks/redux';
 import { AppSlice } from '../src/store/redusers/appSlice';
@@ -20,9 +20,10 @@ const FormPage = () => {
     showFormTogglet(!showForm);
   };
 
-  const addNewCard = (data: CardData) => {
+  const addNewCard = (data: FormData) => {
+    const { name, email, birthday, country, policy, gender } = data;
     const img = URL.createObjectURL(data.file[0]);
-    dispatch(addFormCard({ ...data, img }));
+    dispatch(addFormCard({ name, email, birthday, country, policy, gender, img }));
     showMessageTogglet(true);
     setTimeout(() => {
       showMessageTogglet(false);

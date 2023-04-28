@@ -12,7 +12,7 @@ const LabelFile = styled(Label)`
     content: url('${upload}');
     position: absolute;
     left: 60px;
-    top: -5px;
+    top: -3px;
     width: 25px;
     height: 25px;
   }

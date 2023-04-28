@@ -2,11 +2,11 @@ import React from 'react';
 import LabelFile from './Elements/LabelFile';
 import File from './Elements/File';
 import { FieldError, UseFormRegister } from 'react-hook-form/dist/types';
-import { CardData } from '../../Types/Types';
+import { FormData } from '../../Types/Types';
 
 const InputImg = (props: {
   status: FieldError | undefined;
-  register: UseFormRegister<CardData>;
+  register: UseFormRegister<FormData>;
 }) => {
   const { status, register } = props;
 

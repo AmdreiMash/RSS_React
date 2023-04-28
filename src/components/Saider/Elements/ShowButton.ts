@@ -14,7 +14,7 @@ const ShowButton = styled.div<{ active: boolean }>`
     content: url('${Arrow}');
     position: absolute;
     left: ${(props) => (props.active ? '-25px' : '60px')};
-    top: 2px;
+    top: 3px;
     transform: rotateY(${(props) => (props.active ? '180deg' : '0')});
     width: 25px;
     height: 25px;

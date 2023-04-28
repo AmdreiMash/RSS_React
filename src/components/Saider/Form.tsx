@@ -7,11 +7,11 @@ import errorMessage from '../../ErrorMessages';
 import Select from './Select';
 import Radio from './Radio';
 import SubmitButton from './SubmitButton';
-import { CardData } from '../../Types/Types';
+import { FormData } from '../../Types/Types';
 import InputImg from './InputImg';
 import { useForm } from 'react-hook-form';
 
-const Form = (props: { addNewCard(data: CardData): void }) => {
+const Form = (props: { addNewCard(data: FormData): void }) => {
   const { addNewCard } = props;
   const {
     register,
@@ -83,7 +83,7 @@ const Form = (props: { addNewCard(data: CardData): void }) => {
         message={errorMessage.policy}
         style={{ ...styled.label, fontSize: '0.8em' }}
       >
-        <p>
+        <p style={{ marginTop: '11.2px' }}>
           I have read and agree with the <a href="#">privacy policy</a>
         </p>
         <input type="checkbox" {...register('policy', { required: true })} />
