@@ -16,7 +16,7 @@
     "baseUrl": "./src",
     "resolveJsonModule": true
   },
-  "include": ["src", "styled.d.ts", ".eslintrc.json", "vite.ts.config", "assets", "pages/About.tsx", "pages/Home.tsx", "pages/Form.tsx", "pages/NotFound.tsx", "pages/styles.ts"],
+  "include": ["src", "styled.d.ts", ".eslintrc.json", "vite.ts.config", "assets", "pages/About.tsx", "pages/Home.tsx", "pages/Form.tsx", "pages/NotFound.tsx", "pages/styles.ts", "./cypress"],
   "references": [{ "path": "./tsconfig.node.json" }],
   "types": ["vitest/globals"]
 }
