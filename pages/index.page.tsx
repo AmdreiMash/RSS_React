@@ -13,7 +13,6 @@ function Page() {
       <Route path="/" element={<Home />} />
       <Route path="/About" element={<About />} />
       <Route path="/Form" element={<Form />} />
-      <Route path="*" element={<NotFound />} />
     </Routes>
   );
 }
