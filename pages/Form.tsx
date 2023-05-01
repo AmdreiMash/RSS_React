@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Header from '../src/components/Header';
 import Wrapper from '../src/components/Elements/PageWrapper';
 import Saider from '../src/components/Saider/Saider';
 import FormPageWrapper from '../src/components/Elements/FormPageWrapper';
